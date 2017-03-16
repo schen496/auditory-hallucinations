@@ -43,7 +43,7 @@ dataY = Y[0:2089, :]  # Select only the first video
 print dataY.shape
 
 # As we wait for FC7 features to process, for now just use a dummy variable
-X = np.random.rand(len(audio_dataset),6,6,512)
+X = np.random.rand(len(audio_dataset), 4096*2)  # There is a 4096 from the 3 channel grayscale stacked images, and another 4096 from the RGB image.
 dataX = X[0:2089, :]
 print dataX.shape
 

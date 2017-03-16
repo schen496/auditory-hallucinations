@@ -39,7 +39,7 @@ dataY = Y[0:2089, :]  # Select only the first video
 print dataY.shape
 
 # As we wait for FC7 features to process, for now just use a dummy variable
-X = np.random.rand(len(audio_dataset),6,6,512)
+X = np.random.rand(len(audio_dataset), 4096*2)  # There is a 4096 from the 3 channel grayscale stacked images, and another 4096 from the RGB image.
 dataX = X[0:2089, :]
 print dataX.shape
 
@@ -60,7 +60,8 @@ model.compile(loss='mean_squared_error', optimizer='adam')
 print (model.summary())
 
 # define the checkpoint
-filepath = "./checkpoints/LSTM-weights-{epoch:02d}-{loss:.4f}.hdf5"
+#filepath = "./checkpoints/LSTM-weights-{epoch:02d}-{loss:.4f}.hdf5"
+filepath="./checkpoints/LSTM_best.hdf5"
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 callbacks_list = [checkpoint]
 
