@@ -27,8 +27,9 @@ from keras.applications.imagenet_utils import _obtain_input_shape
 from keras.engine.topology import get_source_inputs
 
 
-#WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_tf_dim_ordering_tf_kernels.h5'
-WEIGHTS_PATH = '/Users/Hanoi/Dropbox\ \(Personal\)/GT\ Spring\ Semester/CS\ 7476\ Hays/pretrained_weights'
+WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_tf_dim_ordering_tf_kernels.h5'
+#WEIGHTS_PATH = '/Users/Hanoi/Dropbox\ \(Personal\)/GT\ Spring\ Semester/CS\ 7476\ Hays/pretrained_weights'
+#WEIGHTS_PATH ='/home/zanoi/ZANOI/pretrained_model_weights/'
 WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
 

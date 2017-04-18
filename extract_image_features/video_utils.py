@@ -12,6 +12,7 @@ from tqdm import tqdm
 import h5py
 import pickle
 
+imageio.plugins.ffmpeg.download()
 ### HELPER FUNCTIONS ### -> need to move to a utils.py
 
 ######################
@@ -58,7 +59,7 @@ def processVideos(audio_f_length, video_filenames):
         processed_videos.append(processOneVideo(audio_f_length, video_filename))
     return np.array(processed_videos)
 
-def returnAudioPrefixAndLength(audio_idx, audio_f_files):
+def returnAudioVectors(audio_idx, audio_f_files):
     audio_f_file = audio_f_files[audio_idx]  # Test with just one audio feature vector, and find all the corresponding movies
     mat_contents = sio.loadmat(audio_f_file)  # 18 x n-2
     audio_vectors = mat_contents['audio_vectors']
@@ -102,6 +103,8 @@ def createAudioVectorDataset(audio_vectors, dataX_shape):
     # dataX_shape: shape of the space time image (1, 8377, 224, 224, 3)
     (num_videos, num_frames, frame_h, frame_w, channels) = dataX_shape
     final_audio_vectors = np.zeros((num_videos, num_frames, audio_vectors.shape[0]))  # (1, 18, 8377)
+    # Hanoi, you forgot to normalize the audio vectors in MATLAB!!!
+    audio_vectors = audio_vectors/np.max(audio_vectors)  # normalize the audio vectors
     single_audio_vector = audio_vectors[:, 0:num_frames]  # Extract the corresponding audio vector, produces (18, 8377) from (18, 8379)
     for i in range(num_videos):
         final_audio_vectors[i] = single_audio_vector.T  # Assign the audio_vector to each video angle in idx=0 , (1, 8377, 224, 224, 3). Need to transpose it here.

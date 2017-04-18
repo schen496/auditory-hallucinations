@@ -6,12 +6,12 @@ from keras.preprocessing import image
 from keras_pretrained_models.vgg19 import VGG19
 
 # file saving and loading destinations change whether you are working on laptop or desktop
-USE_TITANX = False
+USE_TITANX = True
 
 ######## LOADING VIDEO FILENAMES
 print ("--- Loading video and audio filenames...")
 if USE_TITANX:
-    video_dir = ''
+    video_dir = '/home/zanoi/ZANOI/auditory_hallucination_videos'
 else: # Working on MacBook Pro
     video_dir = "/Volumes/SAMSUNG_SSD_256GB/ADV_CV/2-25_VIDAUD/EXPORTS"
 
@@ -30,12 +30,13 @@ audio_f_files = [os.path.join(audio_feature_dir, file_i)
                 if file_i.endswith('.mat')]
 
 num_audio_f = len(audio_f_files)
+print (audio_f_files)
 print("num_audio_f: ", num_audio_f)
 
 ######## PROCESS VIDEO TO BLACK AND WHITE
 ### CHANGE THE FILE TO BE READ HERE!!!!
-audio_idx = 3
-audio_prefix, audio_vector_length, audio_features = returnAudioPrefixAndLength(audio_idx, audio_f_files)
+audio_idx = 1
+audio_prefix, audio_vector_length, audio_features = returnAudioVectors(audio_idx, audio_f_files)
 
 # Find all the linked videos for the given audio vector
 linked_video_f = findMatchingVideos(audio_prefix, video_files)
@@ -73,26 +74,30 @@ for video_num in tqdm(range(num_videos)):
         fc2_features = model.predict(x)  # Predict the FC2 features from VGG19, output shape is (1,4096)
 
         # Just check the result quickly
+        '''
         print(fc2_features.shape)
         for i in range(4096):
             print(fc2_features[:, i])
+        '''
 
         CNN_FC_output[video_num, frame_num] = fc2_features  # Save the FC2 features to a matrix
-print("CNN_FC_output.shape:", CNN_FC_output.shape)
+print("CNN_FC_output.shape:", CNN_FC_output.shape) # (1,8377,1,4096)
 
 ########### CREATE FINAL DATASET, concatenate FC output with audio vectors
-final_audio_vectors = createAudioVectorDataset(audio_features, space_time_images.shape) # (1, 8377, 18)
+# Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
+final_audio_vectors = createAudioVectorDataset(audio_features, space_time_images.shape) #(1, 8377, 18)
 print ("final_audio_vectors.shape:", final_audio_vectors.shape)
 
 ############ PACKAGE AND SAVE THE DATASET
 if USE_TITANX:
-    data_extern_dest = ''
+    data_extern_dest = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:  # Working on MacBook Pro
     data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 file_name = data_extern_dest + audio_prefix + '_dataX_dataY.h5'
 
 with h5py.File(file_name, 'w') as hf:
     print ("Writing data to file...")
-    hf.create_dataset('dataX', data=space_time_images)
+    hf.create_dataset('dataX', data=CNN_FC_output)
     hf.create_dataset('dataY', data=final_audio_vectors)
 
+print ("--- {EVERYTHING COMPLETE HOMIEEEEEEEEE} ---")
