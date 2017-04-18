@@ -5,6 +5,7 @@ from keras.models import Model
 from keras.preprocessing import image
 from keras_pretrained_models.vgg19 import VGG19
 
+# file saving and loading destinations change whether you are working on laptop or desktop
 USE_TITANX = False
 
 ######## LOADING VIDEO FILENAMES
@@ -20,7 +21,6 @@ video_files = [os.path.join(video_dir, file_i)
 
 num_videos = len(video_files)
 print("num_videos: ", num_videos)
-
 
 ######## LOADING AUDIO FILENAMES
 audio_feature_dir = "../audio_vectors"
@@ -57,15 +57,13 @@ print ("space_time_images.shape:", space_time_images.shape)
 ########## RUN THE SPACETIME IMAGES THROUGH VGG19
 print ("--- Running through VGG19 FC2 layer...")
 
+# Build the model
 base_model = VGG19(weights='imagenet')
-model = Model(input=base_model.input, output=base_model.get_layer('fc2').output)
+model = Model(input=base_model.input, output=base_model.get_layer('fc2').output)  # Only take the FC2 layer output
 
+# Preallocate matrix output
 (num_videos, num_frames, frame_h, frame_w, channels) = space_time_images.shape
 CNN_FC_output = np.zeros((num_videos,num_frames,1,4096))  # (1,8377,1,4096) -> FC2 outputs dimensions (1,4096)
-
-#img_path = '../elephant.jpg'
-#img = image.load_img(img_path, target_size=(224, 224))
-#x = image.img_to_array(img)
 
 for video_num in tqdm(range(num_videos)):
     for frame_num in tqdm(range(num_frames)):

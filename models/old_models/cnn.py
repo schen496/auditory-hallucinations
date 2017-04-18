@@ -1,3 +1,5 @@
+'''
+
 import os
 import numpy as np
 np.random.seed(1987) #for reproducibility
@@ -97,3 +99,4 @@ final_model.add(merged)
 # print(hist.history)
 fc7_map = final_model.predict(X_rgb, X_space_time)
 
+'''

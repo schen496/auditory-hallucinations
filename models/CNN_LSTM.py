@@ -18,10 +18,12 @@ from keras.layers.convolutional_recurrent import ConvLSTM2D
 from keras.layers.normalization import BatchNormalization
 import h5py
 
+# This is a CNN+LSTM architecture based on the VGG16 architecture, which plugs into a 2-layer LSTM.
+# This model is intended for training from scratch directly on the images
 
 def createModel(image_dim, audio_vector_dim):
-    (img_rows, img_cols, img_channels) = image_dim
-    input_img = Input(shape=(224, 224, 3))
+    (img_rows, img_cols, img_channels) = image_dim  # (224,224,3)
+    input_img = Input(shape=(img_rows, img_cols, img_channels))
 
     # This is network similar to VGG architecture
     x = ZeroPadding2D((1, 1), input_shape=image_dim, name='Input_Layer')(input_img)
