@@ -1,9 +1,9 @@
 from extract_image_features.video_utils import *
 import numpy as np
-from pretrained_models.imagenet_utils import preprocess_input
+from keras_pretrained_models.imagenet_utils import preprocess_input
 from keras.models import Model
 from keras.preprocessing import image
-from pretrained_models.vgg19 import VGG19
+from keras_pretrained_models.vgg19 import VGG19
 
 ######## LOADING VIDEO FILENAMES
 print ("--- Loading video and audio filenames...")
