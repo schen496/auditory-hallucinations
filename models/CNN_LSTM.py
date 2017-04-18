@@ -18,6 +18,7 @@ from keras.layers.convolutional_recurrent import ConvLSTM2D
 from keras.layers.normalization import BatchNormalization
 import h5py
 
+
 def createModel(image_dim, audio_vector_dim):
     (img_rows, img_cols, img_channels) = image_dim
     input_img = Input(shape=(224, 224, 3))
@@ -129,6 +130,12 @@ print("dataY.shape:", dataY.shape)
 #############
 ### BUILD THE MODEL
 model = createModel((frame_h, frame_w, channels),audio_vector_dim)
+
+#############
+### CHECK FOR EXISTING MODEL
+model_name = ''
+if os.path.exists("./checkpoints/" + model_name):
+    model.load_weights("./checkpoints/" + model_name)
 
 #############
 ### BEGIN TRAINING THE MODEL

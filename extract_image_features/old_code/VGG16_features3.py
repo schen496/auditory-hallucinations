@@ -94,6 +94,6 @@ if __name__ == "__main__":
     model_weights = model.get_weights()
     for layer in model_weights:
         print (layer.shape)
-    print model_weights[1]
+    print (model_weights[1])
     #out = model.predict(im)
     #print (np.argmax(out))
