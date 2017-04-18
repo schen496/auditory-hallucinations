@@ -28,7 +28,7 @@ for i = 1:length(audio_file_names)
     
     % Count the number of frames in the video file (must manually count,
     % since the MATLAB video object is not 100% accurate)
-    num_vid_frames = 1;
+    num_vid_frames = 0;
     while hasFrame(vidObj)
           readFrame(vidObj);
           num_vid_frames = num_vid_frames + 1;
