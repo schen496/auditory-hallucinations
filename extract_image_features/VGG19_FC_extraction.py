@@ -5,9 +5,14 @@ from keras.models import Model
 from keras.preprocessing import image
 from keras_pretrained_models.vgg19 import VGG19
 
+USE_TITANX = False
+
 ######## LOADING VIDEO FILENAMES
 print ("--- Loading video and audio filenames...")
-video_dir = "/Volumes/SAMSUNG_SSD_256GB/ADV_CV/2-25_VIDAUD/EXPORTS"
+if USE_TITANX:
+    video_dir = ''
+else: # Working on MacBook Pro
+    video_dir = "/Volumes/SAMSUNG_SSD_256GB/ADV_CV/2-25_VIDAUD/EXPORTS"
 
 video_files = [os.path.join(video_dir, file_i)
          for file_i in os.listdir(video_dir)
@@ -67,20 +72,25 @@ for video_num in tqdm(range(num_videos)):
         img = space_time_images[video_num, frame_num]
         x = np.expand_dims(img, axis=0)
         x = preprocess_input(x)
-        fc2_features = model.predict(x)  # Predict the FC2 features from VGG19
+        fc2_features = model.predict(x)  # Predict the FC2 features from VGG19, output shape is (1,4096)
+
+        # Just check the result quickly
+        print(fc2_features.shape)
+        for i in range(4096):
+            print(fc2_features[:, i])
 
         CNN_FC_output[video_num, frame_num] = fc2_features  # Save the FC2 features to a matrix
 print("CNN_FC_output.shape:", CNN_FC_output.shape)
 
-for i in range(4096):
-    print (CNN_FC_output[0,2300,:,i])
-
-########### CREATE FINAL DATASET
+########### CREATE FINAL DATASET, concatenate FC output with audio vectors
 final_audio_vectors = createAudioVectorDataset(audio_features, space_time_images.shape) # (1, 8377, 18)
 print ("final_audio_vectors.shape:", final_audio_vectors.shape)
 
 ############ PACKAGE AND SAVE THE DATASET
-data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
+if USE_TITANX:
+    data_extern_dest = ''
+else:  # Working on MacBook Pro
+    data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 file_name = data_extern_dest + audio_prefix + '_dataX_dataY.h5'
 
 with h5py.File(file_name, 'w') as hf:
