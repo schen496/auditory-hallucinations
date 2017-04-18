@@ -107,7 +107,5 @@ def createAudioVectorDataset(audio_vectors, dataX_shape):
         final_audio_vectors[i] = single_audio_vector.T  # Assign the audio_vector to each video angle in idx=0 , (1, 8377, 224, 224, 3). Need to transpose it here.
     return final_audio_vectors
 
-#########
-### EXTRACT FC fea
 
 
