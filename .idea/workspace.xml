@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62cad7d-864b-45f8-87b8-39b18029de0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model_tester/CNN_LSTM_Tester.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/audio_vectors_unitTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/matplotlib_unitTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM-prediction.png" afterPath="$PROJECT_DIR$/model_tester/CNN_LSTM-prediction.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" afterPath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extraction.py" afterPath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extraction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/video_utils.py" afterPath="$PROJECT_DIR$/extract_image_features/video_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_pretrained_models/vgg19.py" afterPath="$PROJECT_DIR$/keras_pretrained_models/vgg19.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/CNN_LSTM.py" afterPath="$PROJECT_DIR$/models/CNN_LSTM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/FC_LSTM.py" afterPath="$PROJECT_DIR$/models/FC_LSTM.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,23 +15,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG16_features3.coverage" NAME="VGG16_features3 Coverage Results" MODIFIED="1492402799784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_features.coverage" NAME="VGG19_features Coverage Results" MODIFIED="1491936280836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM_Tester.coverage" NAME="CNN_LSTM_Tester Coverage Results" MODIFIED="1492558207257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model_tester" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$audio_vectors_unitTest.coverage" NAME="audio_vectors_unitTest Coverage Results" MODIFIED="1492554514365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_FC_extraction.coverage" NAME="VGG19_FC_extraction Coverage Results" MODIFIED="1492554516780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$space_time_concat.coverage" NAME="space_time_concat Coverage Results" MODIFIED="1492477564385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19__2_.coverage" NAME="extract_VGG19 (2) Coverage Results" MODIFIED="1492547535570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/keras_pretrained_models" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$matplotlib_unitTest.coverage" NAME="matplotlib_unitTest Coverage Results" MODIFIED="1492556481686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$audio_extractionUnitTest.coverage" NAME="audio_extractionUnitTest Coverage Results" MODIFIED="1492476915252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG16_features2.coverage" NAME="VGG16_features2 Coverage Results" MODIFIED="1491944415143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$LSTM.coverage" NAME="LSTM Coverage Results" MODIFIED="1491827342646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19.coverage" NAME="extract_VGG19 Coverage Results" MODIFIED="1492490594512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep-learning-models" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$video_extraction.coverage" NAME="video_extraction Coverage Results" MODIFIED="1492521686932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$matplotlib_test.coverage" NAME="matplotlib_test Coverage Results" MODIFIED="1491829266227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$audio_extractionUnitTest.coverage" NAME="audio_extractionUnitTest Coverage Results" MODIFIED="1492476915252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM.coverage" NAME="CNN_LSTM Coverage Results" MODIFIED="1492481645832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19__2_.coverage" NAME="extract_VGG19 (2) Coverage Results" MODIFIED="1492527868776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/keras_pretrained_models" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG16_features2.coverage" NAME="VGG16_features2 Coverage Results" MODIFIED="1491944415143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$space_time_concat.coverage" NAME="space_time_concat Coverage Results" MODIFIED="1492477564385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_FC_extraction.coverage" NAME="VGG19_FC_extraction Coverage Results" MODIFIED="1492522112754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG16_features3.coverage" NAME="VGG16_features3 Coverage Results" MODIFIED="1492402799784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$FC_LSTM.coverage" NAME="FC_LSTM Coverage Results" MODIFIED="1492528974939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$video_extraction.coverage" NAME="video_extraction Coverage Results" MODIFIED="1492521686932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19.coverage" NAME="extract_VGG19 Coverage Results" MODIFIED="1492490594512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep-learning-models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19__1_.coverage" NAME="extract_VGG19 (1) Coverage Results" MODIFIED="1492526998921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pretrained_models" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$FC_LSTM.coverage" NAME="FC_LSTM Coverage Results" MODIFIED="1492554752614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$matplotlib_test.coverage" NAME="matplotlib_test Coverage Results" MODIFIED="1491829266227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_features.coverage" NAME="VGG19_features Coverage Results" MODIFIED="1491936280836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -50,8 +39,8 @@
       <file leaf-file-name="VGG19_FC_extraction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extract_image_features/VGG19_FC_extraction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="953">
-              <caret line="102" column="53" lean-forward="false" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+            <state relative-caret-position="30">
+              <caret line="7" column="90" lean-forward="false" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -59,37 +48,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video_utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extract_image_features/video_utils.py">
+      <file leaf-file-name="LSTM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/old_models/LSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="600">
+              <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FC_LSTM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/FC_LSTM.py">
+      <file leaf-file-name="cnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/old_models/cnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-                <marker date="1492552299993" expanded="true" signature="837:1718" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CNN_LSTM_Tester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model_tester/CNN_LSTM_Tester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="80" column="11" lean-forward="false" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="169">
+              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,35 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matplotlib_unitTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unitTests/matplotlib_unitTest.py">
+      <file leaf-file-name="CNN_LSTM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/CNN_LSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="39" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="39" />
-              <folding>
-                <element signature="e#114#132#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="audio_vectors_unitTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unitTests/audio_vectors_unitTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -193,10 +143,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="52" />
-    <option name="width" value="1855" />
-    <option name="height" value="1148" />
+    <option name="x" value="4" />
+    <option name="y" value="23" />
+    <option name="width" value="1436" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -213,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,7 +192,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -603,27 +553,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="52" width="1855" height="1148" extended-state="4" />
-    <editor active="true" />
+    <frame x="4" y="23" width="1436" height="877" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12830189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16573817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1115" y="52" width="805" height="1148" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24603914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="319" y="39" width="718" height="861" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -845,15 +795,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/old_models/cnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="169">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/old_models/LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="600">
           <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
           <folding />
         </state>
@@ -861,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/CNN_LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="113" column="60" lean-forward="true" selection-start-line="113" selection-start-column="60" selection-end-line="113" selection-end-column="60" />
+        <state relative-caret-position="90">
+          <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -871,9 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -907,16 +849,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="87" column="51" lean-forward="true" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extract_image_features/VGG19_FC_extraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="953">
-          <caret line="102" column="53" lean-forward="false" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+        <state relative-caret-position="30">
+          <caret line="7" column="90" lean-forward="false" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
@@ -927,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,10 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1492552299993" expanded="true" signature="837:1718" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,24 +880,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="39" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="e#114#132#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model_tester/figure_1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/model_tester/figure_1.png" />
     <entry file="file://$PROJECT_DIR$/model_tester/CNN_LSTM_Tester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="827">
           <caret line="80" column="11" lean-forward="false" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
