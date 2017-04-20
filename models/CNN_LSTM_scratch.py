@@ -123,11 +123,11 @@ if USE_TITANX:
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-top_angles = ['seq1_angle5',
-              'seq2_angle5',
-              'seq3_angle4',]
+top_angles = ['seq1angle5_dataX_dataY.h5',
+              'seq2angle5_dataX_dataY.h5',
+              'seq3angle4_dataX_dataY.h5']
 
-data_files = [os.path.join(data_dir, file_i)
+data_files = [data_dir + file_i
               for file_i in top_angles]
 
 '''
@@ -184,7 +184,7 @@ if os.path.exists("./checkpoints/" + model_name):
 model.fit(dataX, dataY, epochs=500, batch_size=256, verbose=2)
 
 print("Saving trained model...")
-model_prefix = 'CNN_LSTM_v1'
+model_prefix = 'CNN_LSTM_scratch_v1'
 model_path = "../trained_models/" + model_prefix + ".h5"
 save_model(model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
 
