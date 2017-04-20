@@ -65,7 +65,7 @@ for audio_idx in range(num_audio_f):  # Loop over all audio files
         print ("--- Running through VGG19 FC2 layer...")
         # Build the model
         base_model = VGG19(weights='imagenet')
-        model = Model(input=base_model.input, output=base_model.get_layer('fc2').output)  # Only take the FC2 layer output
+        model = Model(input=base_model.input, output=base_model.get_layer('fc1').output)  # Only take the FC2 layer output
 
         # Preallocate matrix output
         (num_frames, frame_h, frame_w, channels) = space_time_image.shape
@@ -87,7 +87,7 @@ for audio_idx in range(num_audio_f):  # Loop over all audio files
 
         ############ PACKAGE AND SAVE THE DATASET
         if USE_TITANX:
-            data_extern_dest = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
+            data_extern_dest = '/home/zanoi/ZANOI/auditory_hallucinations_data/FC_2_data/'
         else:  # Working on MacBook Pro
             data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
         file_name = data_extern_dest + audio_prefix + angle_name + '_dataX_dataY.h5'

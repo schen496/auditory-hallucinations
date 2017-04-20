@@ -29,7 +29,9 @@ def createModel(image_dim, audio_vector_dim):
 
     # Like Hanoi's work with DeepMind Reinforcement Learning, build a model that does not use pooling layers
     # to retain sensitivty to locations of objects
-    x = Conv2D(filters=64,
+    # Tried (64,128,256,512)
+
+    x = Conv2D(filters=32,
                kernel_size=(16, 16),
                input_shape=image_dim,
                name='Input_Layer',
@@ -38,21 +40,21 @@ def createModel(image_dim, audio_vector_dim):
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                strides=(8, 8))(input_img)
 
-    x = Conv2D(filters=128,
+    x = Conv2D(filters=64,
                kernel_size=(8, 8),
                activation='relu',
                padding='same',
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                strides=(4, 4))(x)
 
-    x = Conv2D(filters=256,
+    x = Conv2D(filters=128,
                kernel_size=(4, 4),
                activation='relu',
                padding='same',
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                strides=(2, 2))(x)
 
-    x = Conv2D(filters=512,
+    x = Conv2D(filters=256,
                kernel_size=(2, 2),
                input_shape=image_dim,
                activation='relu',
@@ -76,7 +78,7 @@ def createModel(image_dim, audio_vector_dim):
     model = Model(inputs=input_img, outputs=network_output)
 
     # Use the Adam optimizer for gradient descent
-    adam = Adam(lr=1.5e-6)
+    adam = Adam(lr=0.5e-6)
 
     model.compile(loss='mean_squared_error', validation_split=0.1, optimizer='adam')
     print(model.summary())
@@ -85,81 +87,38 @@ def createModel(image_dim, audio_vector_dim):
 
 
 # Testing if the model compiles
-model = createModel((224, 224, 3), 18)
+#model = createModel((224, 224, 3), 18)
 
-############
-### LOADING AUDIO VECTORS ###
-audio_feature_dir = "../audio_vectors"
-
-audio_f_files = [os.path.join(audio_feature_dir, file_i)
-                 for file_i in os.listdir(audio_feature_dir)
-                 if file_i.endswith('.mat')]
-
-num_audio_f = len(audio_f_files)
-print("num_audio_f: ", num_audio_f)
-
-###########
-'''
-### READING AUDIO VECTORS
-audio_idx = 1 # 3 is the single seq3a one
-audio_f_file = audio_f_files[audio_idx]  # Test with just one audio feature vector, and find all the corresponding movies
-mat_contents = sio.loadmat(audio_f_file)  # 18 x n-2
-audio_vectors = mat_contents['audio_vectors']
-audio_vector_length = audio_vectors.shape[1]
-#print(audio_f_files[0])
-print("audio_vectors.shape: ", audio_vectors.shape)
-
-# Extract the file prefix using regular expressions
-start = audio_f_file.find('seq')
-end = audio_f_file.find("_audio", start)
-audio_prefix = audio_f_file[start:end]
-'''
 
 #############
 ### READING THE DATASET
 # Define the external SSD where the dataset residesin
 if USE_TITANX:
-    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
+    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/TopAngle_data/'
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-top_angles = ['seq1angle5_dataX_dataY.h5',
-              'seq2angle5_dataX_dataY.h5',
-              'seq3angle4_dataX_dataY.h5']
+data_file = data_dir + 'TopAngle_dataX_dataY.h5'
 
-data_files = [data_dir + file_i
-              for file_i in top_angles]
-
-'''
-for data_file in data_files:
-    print ("data_file:", data_file)
-'''
-
-# Open the h5py file
-dataX = []
-dataY = []
-for data_file in data_files:
-    with h5py.File(data_file, 'r') as hf:
-        print("Reading data from file..")
-        dataX_vid = hf['dataX'][:]
-        dataY_features = hf['dataY'][:]
-    print("dataX_vid.shape:", dataX_vid.shape)
-    print("dataY_features.shape:", dataY_features.shape)
-    dataX.append(dataX_vid)
-    dataY.append(dataY_features)
+with h5py.File(data_file, 'r') as hf:
+    print("Reading data from file..")
+    dataX = hf['dataX'][:]
+    dataY = hf['dataY'][:]
+print("dataX.shape:", dataX.shape)
+print("dataY.shape:", dataY.shape)
 
 # Flatten out the data
 print("Flatenning data")
-(num_videos, num_frames, timesteps, features) = dataX.shape  # (1,8377,1,4096)
-dataX = np.reshape(dataX, (-1, timesteps, features))  # (8377,1,4096)
-audio_vector_dim = dataY.shape[2]
+(num_frames, frame_h, frame_w, channels) = dataX.shape  # (8377,224,224,3)
+dataX = np.reshape(dataX, (-1, frame_h, frame_w, channels))  # (8377,224,224,3)
+audio_vector_dim = dataY.shape[1]
 dataY = np.reshape(dataY, (-1, audio_vector_dim))  # (8377,18)
 print("dataX.shape:", dataX.shape)
 print("dataY.shape:", dataY.shape)
 
 #############
 ### BUILD THE MODEL
-model = createModel((timesteps, features), audio_vector_dim)
+model = createModel((frame_h, frame_w, channels), audio_vector_dim)
 
 #############
 ### CHECK FOR EXISTING MODEL
@@ -181,10 +140,10 @@ if os.path.exists("./checkpoints/" + model_name):
 
 # This function actually starts the training
 # model.fit(dataX, dataY, epochs=500, batch_size=256, callbacks=callbacks_list, verbose=2)
-model.fit(dataX, dataY, epochs=500, batch_size=256, verbose=2)
+model.fit(dataX, dataY, epochs=50, batch_size=256, verbose=2)
 
 print("Saving trained model...")
-model_prefix = 'CNN_LSTM_scratch_v1'
+model_prefix = 'CNN_LSTM_scratch_v2'
 model_path = "../trained_models/" + model_prefix + ".h5"
 save_model(model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
 

@@ -80,7 +80,7 @@ if USE_TITANX:
     data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
-file_name = data_dir + audio_prefix + '_dataX_dataY.h5'
+file_name = data_dir + 'TopAnglesFC2_dataX_dataY.h5'
 
 # Open the h5py file
 with h5py.File(file_name, 'r') as hf:
@@ -126,7 +126,7 @@ if os.path.exists("./checkpoints/" + model_name):
 model.fit(dataX, dataY, epochs=500, batch_size=256, verbose=2)
 
 print ("Saving trained model...")
-model_prefix = 'CNN_LSTM_v1'
+model_prefix = 'CNN_LSTM_TopAngle_v1'
 model_path = "../trained_models/" + model_prefix + ".h5"
 save_model(model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
 
