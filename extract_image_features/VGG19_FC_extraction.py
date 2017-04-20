@@ -35,7 +35,7 @@ print("num_audio_f: ", num_audio_f)
 
 ######## PROCESS VIDEO TO BLACK AND WHITE
 ### CHANGE THE FILE TO BE READ HERE!!!!
-audio_idx = 1
+audio_idx = 3
 audio_prefix, audio_vector_length, audio_features = returnAudioVectors(audio_idx, audio_f_files)
 
 # Find all the linked videos for the given audio vector

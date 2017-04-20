@@ -73,6 +73,13 @@ def returnAudioVectors(audio_idx, audio_f_files):
     audio_prefix = audio_f_file[start:end]
     return audio_prefix, audio_vector_length, audio_vectors
 
+def returnAngleName(video_filename):
+    # video_filename: string of video filename e.g
+    start = video_filename.find('angle')
+    end = video_filename.find(".mp4", start)
+    angle_name = video_filename[start:end]
+    return angle_name
+
 #########
 ### SPACE-TIME CONCATENATION
 def createSpaceTimeImagesforOneVideo(video, CNN_window):
@@ -110,5 +117,14 @@ def createAudioVectorDataset(audio_vectors, dataX_shape):
         final_audio_vectors[i] = single_audio_vector.T  # Assign the audio_vector to each video angle in idx=0 , (1, 8377, 224, 224, 3). Need to transpose it here.
     return final_audio_vectors
 
-
+def createAudioVectorDatasetForOneVid(audio_vectors, dataX_shape):
+    # audio_vectors: a numpy array of the audio vector (18,8378)
+    # dataX_shape: shape of the space time image (1, 8377, 224, 224, 3)
+    (num_frames, frame_h, frame_w, channels) = dataX_shape
+    final_audio_vector = np.zeros((num_frames, audio_vectors.shape[0]))  # (1, 18, 8377)
+    # Hanoi, you forgot to normalize the audio vectors in MATLAB!!!
+    audio_vectors = audio_vectors/np.max(audio_vectors)  # normalize the audio vectors
+    single_audio_vector = audio_vectors[:, 0:num_frames]  # Extract the corresponding audio vector, produces (18, 8377) from (18, 8379)
+    final_audio_vector = single_audio_vector.T  # Assign the audio_vector to each video angle in idx=0 , (1, 8377, 224, 224, 3). Need to transpose it here.
+    return final_audio_vector
 
