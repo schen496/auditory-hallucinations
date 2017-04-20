@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62cad7d-864b-45f8-87b8-39b18029de0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extract_image_features/extract_cont_TopAngles.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_Tester.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model_tester/FC_LSTM_TopAngle_Tester.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ConvLSTM.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/FC_LSTM_TopAngle.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/figures/CNN_LSTM-prediction.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/extract_image_features/join_video_anglles.py" afterPath="$PROJECT_DIR$/extract_image_features/old_code/join_video_angles.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/extract_image_features/space_time_concat.py" afterPath="$PROJECT_DIR$/extract_image_features/old_code/space_time_concat.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/extract_image_features/test_image.jpg" afterPath="$PROJECT_DIR$/extract_image_features/old_code/test_image.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/extract_image_features/video_extraction.py" afterPath="$PROJECT_DIR$/extract_image_features/old_code/video_extraction.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_Tester.py" afterPath="$PROJECT_DIR$/model_tester/FC_LSTM_Tester.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/trained_models/CNN_LSTM_v1.h5" afterPath="$PROJECT_DIR$/trained_models/FC_LSTM_v1.h5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" afterPath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extract_single_vids.py" afterPath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extract_single_vids.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" afterPath="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/FC_LSTM.py" afterPath="$PROJECT_DIR$/models/FC_LSTM.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,14 +65,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConvLSTM.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConvLSTM.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/ConvLSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="489">
+              <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,7 +154,6 @@
         <option value="$PROJECT_DIR$/unitTests/matplotlib_unitTest.py" />
         <option value="$PROJECT_DIR$/extract_image_features/VGG19_FC_extraction.py" />
         <option value="$PROJECT_DIR$/extract_image_features/video_utils.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/extract_image_features/join_video_anglles.py" />
         <option value="$PROJECT_DIR$/models/FC_LSTM.py" />
         <option value="$PROJECT_DIR$/model_tester/CNN_LSTM_Tester.py" />
@@ -175,6 +166,7 @@
         <option value="$PROJECT_DIR$/models/FC_LSTM_TopAngle.py" />
         <option value="$PROJECT_DIR$/model_tester/FC_LSTM_TopAngle_Tester.py" />
         <option value="$PROJECT_DIR$/models/ConvLSTM.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -663,7 +655,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="992" y="52" width="928" height="1148" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32061762" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32059646" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -915,14 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/FC_LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -1013,11 +997,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/ConvLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+        <state relative-caret-position="489">
+          <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
