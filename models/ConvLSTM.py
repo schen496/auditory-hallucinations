@@ -30,9 +30,11 @@ def createModel(input_sequence_dim, audio_vector_dim):
     frame_h, frame_w, channels = input_sequence_dim  # (80,80,1) we are going to pass in single greyscale images
 
     # ConvLSTM expects an input with shape
-    # (n_frames, width, height, channels)
+    # (n_frames, width, height, channels)  In the example they used n_frames = 15
     input_sequence = Input(shape=(None, frame_h, frame_w, channels))
 
+
+    # input to a ConvLSTM2D is of form (samples, time, filters, output_row, output_col)`
     x = ConvLSTM2D(filters=32,
                    kernel_size=(8, 8),
                    padding='same',
@@ -68,6 +70,8 @@ def createModel(input_sequence_dim, audio_vector_dim):
     '''
 
     # The Conv3D layer causes the the hidden "volumes" to become a flat image
+    # The 3D convolution changes a (None, None, 40, 40, 40) into a (None,None,40,40,40)
+    # Output of a Conv3D is (samples, filters, new_conv_dim1, new_conv_dim2, new_conv_dim3)
     x = Conv3D(filters=1,
                kernel_size=(3, 3, 3),
                activation='sigmoid',
@@ -75,6 +79,7 @@ def createModel(input_sequence_dim, audio_vector_dim):
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                data_format='channels_last')(x)
 
+    '''
     # Run a CNN over the "flat" image
     x = Conv2D(filters=32,
                kernel_size=(3, 3),
@@ -82,6 +87,7 @@ def createModel(input_sequence_dim, audio_vector_dim):
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                padding='same',
                activation='relu')(x)
+    '''
 
     x = Flatten()(x)
     # x = Dense(1024, activation='relu', name='1st_FC')(x)
