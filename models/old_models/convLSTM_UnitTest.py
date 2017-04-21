@@ -11,7 +11,7 @@ import pylab as plt
 
 # We create a layer which take as input movies of shape
 # (n_frames, width, height, channels) and returns a movie
-# of identical shape.
+# of identical shape. RETURNS A MOVIE OF IDENTICAL SHAPE
 
 seq = Sequential()
 seq.add(ConvLSTM2D(filters=40, kernel_size=(3, 3),
@@ -78,6 +78,9 @@ def generate_movies(n_samples=1200, n_frames=15):
                 # the value of the pixel is not exactly one,
                 # we need to train the network to be robust and still
                 # consider it as a pixel belonging to a square.
+
+                # This is a bit like label smoothing, so a pixel with valur 0.9 should
+                # still be considered a filled in pixel of value 1.0
                 if np.random.randint(0, 2):
                     noise_f = (-1)**np.random.randint(0, 2)
                     noisy_movies[i, t,
@@ -115,7 +118,7 @@ track = noisy_movies[which][:7, ::, ::, ::]
 
 for j in range(16):
     new_pos = seq.predict(track[np.newaxis, ::, ::, ::, ::])
-    print ("new_post.shape:", new_pos.shape)
+    print ("new_pos.shape:", new_pos.shape)
     new = new_pos[::, -1, ::, ::, ::]
     print ("new.shape", new.shape)
     track = np.concatenate((track, new), axis=0)
@@ -147,3 +150,58 @@ for i in range(15):
 
     plt.imshow(toplot)
     plt.savefig('%i_animate.png' % (i + 1))
+
+
+# Print-out from network at end of training is the following:
+'''
+940/950 [============================>.] - ETA: 0s - loss: 2.5998e-06
+950/950 [==============================] - 38s - loss: 2.5940e-06 - val_loss: 2.4043e-04
+new_post.shape: (1, 7, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (8, 40, 40, 1)
+new_post.shape: (1, 8, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (9, 40, 40, 1)
+new_post.shape: (1, 9, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (10, 40, 40, 1)
+new_post.shape: (1, 10, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (11, 40, 40, 1)
+new_post.shape: (1, 11, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (12, 40, 40, 1)
+new_post.shape: (1, 12, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (13, 40, 40, 1)
+new_post.shape: (1, 13, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (14, 40, 40, 1)
+new_post.shape: (1, 14, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (15, 40, 40, 1)
+new_post.shape: (1, 15, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (16, 40, 40, 1)
+new_post.shape: (1, 16, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (17, 40, 40, 1)
+new_post.shape: (1, 17, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (18, 40, 40, 1)
+new_post.shape: (1, 18, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (19, 40, 40, 1)
+new_post.shape: (1, 19, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (20, 40, 40, 1)
+new_post.shape: (1, 20, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (21, 40, 40, 1)
+new_post.shape: (1, 21, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (22, 40, 40, 1)
+new_post.shape: (1, 22, 40, 40, 1)
+new.shape (1, 40, 40, 1)
+track.shape (23, 40, 40, 1)
+'''
