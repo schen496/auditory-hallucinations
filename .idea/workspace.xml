@@ -55,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/models/FC_LSTM_TopAngle.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="0" />
+              <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -66,8 +66,8 @@
       <file leaf-file-name="ConvLSTM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/ConvLSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+            <state relative-caret-position="633">
+              <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -79,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
-              <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -205,20 +205,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trained_models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -944,7 +930,7 @@
     <entry file="file://$PROJECT_DIR$/models/FC_LSTM_TopAngle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="0" />
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
@@ -954,15 +940,15 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/ConvLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="633">
+          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
