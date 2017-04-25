@@ -35,7 +35,8 @@ def processOneVideo(audio_f_length, video_filename, normalize=False):
     # video_filename = str (filename of a single video)
 
     vid = imageio.get_reader(video_filename, 'ffmpeg')
-    greyscale_vid = []
+    #greyscale_vid = []
+    greyscale_vid = np.zeros((audio_f_length + 1, 224, 224))
     for i in tqdm(range(audio_f_length + 1)):
         # apparently if I have an audio_vector of dimensions (18,8378), then the number of frames in the video is 8379
         with warnings.catch_warnings():  # Ignores the warnings about depacrated functions that don't apply to this code
@@ -45,8 +46,8 @@ def processOneVideo(audio_f_length, video_filename, normalize=False):
                 img = img / np.max(img)  # rescale to 0 - 1 scale
             img = transform.resize(img, (224, 224), preserve_range=True)  # resize images to 224 x 224
             img = color.rgb2gray(img)  # convert to greyscale
-            greyscale_vid.append(img)
-    greyscale_vid = np.array(greyscale_vid)
+            greyscale_vid[i] = img
+    #greyscale_vid = np.array(greyscale_vid)
     print('\n')
     print("Processed:", video_filename, "video shape:", greyscale_vid.shape)
     return greyscale_vid

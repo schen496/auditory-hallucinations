@@ -5,8 +5,6 @@ from keras.models import Model
 from keras.preprocessing import image
 from keras_pretrained_models.vgg19 import VGG19
 
-# file saving and loading destinations change whether you are working on laptop or desktop
-USE_TITANX = True
 ########
 ### THIS CODE MANUALLY CONCATENATES THE 3 TOP ANGLE VIDEOS, it is not general purpose. Bad coding...Hanoi
 

@@ -61,17 +61,20 @@ def generate_movies(n_samples=1200, n_frames=15):
             xstart = np.random.randint(20, 60)
             ystart = np.random.randint(20, 60)
             # Direction of motion
-            directionx = np.random.randint(0, 3) - 1
-            directiony = np.random.randint(0, 3) - 1
+            directionx = np.random.randint(0, 3) - 1  # direction x stays the same throughout all the frames
+            directiony = np.random.randint(0, 3) - 1  # direction y stays the same throughout all the frames
 
             # Size of the square
             w = np.random.randint(2, 4)
 
+            # For a given pixel/box of pixels, the direction is the same for the whole duration of the frames (15).
+            # The pixel just moves straight for 15 frames.
             for t in range(n_frames):
                 x_shift = xstart + directionx * t
                 y_shift = ystart + directiony * t
-                noisy_movies[i, t, x_shift - w: x_shift + w,
-                             y_shift - w: y_shift + w, 0] += 1
+                noisy_movies[i, t, x_shift - w: x_shift + w, y_shift - w: y_shift + w, 0] += 1
+                # This is the data for a frame at time t, what we do next is pair this with a prediction at time t+1
+
 
                 # Make it more robust by adding noise.
                 # The idea is that if during inference,
@@ -79,25 +82,23 @@ def generate_movies(n_samples=1200, n_frames=15):
                 # we need to train the network to be robust and still
                 # consider it as a pixel belonging to a square.
 
-                # This is a bit like label smoothing, so a pixel with valur 0.9 should
-                # still be considered a filled in pixel of value 1.0
+                # All the pixels around the target pixel will be blurred with smaller pixel values like 0.1,
                 if np.random.randint(0, 2):
                     noise_f = (-1)**np.random.randint(0, 2)
                     noisy_movies[i, t,
                                  x_shift - w - 1: x_shift + w + 1,
                                  y_shift - w - 1: y_shift + w + 1,
-                                 0] += noise_f * 0.1
+                                 0] += noise_f * 0.1  # Go over the noisy_movies matrix and add the noise around the target pixel
 
                 # Shift the ground truth by 1
-                x_shift = xstart + directionx * (t + 1)
+                x_shift = xstart + directionx * (t + 1)  # This is the next pixel in the straight/diagonal path
                 y_shift = ystart + directiony * (t + 1)
-                shifted_movies[i, t, x_shift - w: x_shift + w,
-                               y_shift - w: y_shift + w, 0] += 1
+                shifted_movies[i, t, x_shift - w: x_shift + w, y_shift - w: y_shift + w, 0] += 1
 
     # Cut to a 40x40 window
     noisy_movies = noisy_movies[::, ::, 20:60, 20:60, ::]
     shifted_movies = shifted_movies[::, ::, 20:60, 20:60, ::]
-    noisy_movies[noisy_movies >= 1] = 1
+    noisy_movies[noisy_movies >= 1] = 1  # Clamp all the values to a max of 1. Since stuff from above may cause a pixel to be 1.1
     shifted_movies[shifted_movies >= 1] = 1
     return noisy_movies, shifted_movies
 
@@ -124,6 +125,8 @@ for j in range(16):
     track = np.concatenate((track, new), axis=0)
     print ("track.shape", track.shape)
 
+# After this for loop track.shape = (23,40,40,1)
+# But the next for loop for plotting only
 
 # And then compare the predictions
 # to the ground truth
@@ -143,9 +146,10 @@ for i in range(15):
     plt.imshow(toplot)
     ax = fig.add_subplot(122)
     plt.text(1, 3, 'Ground truth', fontsize=20)
-
+    # track2 is the ground truth
     toplot = track2[i, ::, ::, 0]
     if i >= 2:
+        # track2 and shifted_movies is the ground truth
         toplot = shifted_movies[which][i - 1, ::, ::, 0]
 
     plt.imshow(toplot)

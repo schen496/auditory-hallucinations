@@ -10,9 +10,12 @@ clc;
 
 % Specify the folder where the files live. Right now they are all on my
 % Samsung External SSD.
-myFolder = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/2-25_VIDAUD/EXPORTS';
-[video_file_names, audio_file_names] = retrieveFileNames(myFolder);
+%myFolder = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/2-25_VIDAUD/EXPORTS';
 
+% Process second set of files filmed on 4/21/2017
+myFolder = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/4-24_VIDAUD/EXPORTS';
+
+[video_file_names, audio_file_names] = retrieveFileNames(myFolder);
 % For every unique audio file name, find the corresponding video to
 % calculate video2audio fps. Then use this information to calculate the
 % audio vectors. 
@@ -47,6 +50,9 @@ for i = 1:length(audio_file_names)
     % Save the audio vectors in the same directory
     file_name = strcat(seq_n,'_audio_vectors.mat');
     save(file_name, 'audio_vectors'); 
+    
+    % clear variable to save space 
+    clear audio_vectors;
 end
 
 
