@@ -12,6 +12,7 @@ from keras.layers import LSTM
 from keras.utils.io_utils import HDF5Matrix
 import h5py
 from models.my_callbacks import *
+import time
 
 # 24/4/2017
 # This is a CNN+LSTM intended to train from scratch directly from the video frames with dimensions 200x200
@@ -67,7 +68,7 @@ def createModel(image_dim, audio_vector_dim):
     x = Reshape((1, 512))(x)
     x = LSTM(256, input_shape=(1, 512), dropout=0.2, return_sequences=True)(x)
     x = Dropout(0.2)(x)
-    x = LSTM(256, dropout=0.2, name='LSTM_reg_output')(x)
+    x = LSTM(128, dropout=0.2, name='LSTM_reg_output')(x)
     network_output = Dense(audio_vector_dim)(x)
 
     model = Model(inputs=input_img, outputs=network_output)
@@ -83,6 +84,7 @@ def createModel(image_dim, audio_vector_dim):
 
 # Testing if the model compiles
 #model = createModel((224, 224, 3), 18)
+print(">>> STARTING TIME:", str(time.strftime("%m-%d_%H-%M-%S")))
 
 #############
 ### READING THE DATASET
@@ -92,7 +94,7 @@ if USE_TITANX:
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-data_file = data_dir + 'TopAngleFinal_dataX_dataY.h5'
+data_file = data_dir + 'TopAngle170_dataX_dataY.h5'
 
 # Load first element of data to extract information on video
 with h5py.File(data_file, 'r') as hf:
@@ -133,8 +135,8 @@ model = createModel((frame_h, frame_w, channels), audio_vector_dim)
 #############
 ###Define a bunch of callbacks
 # Set up Keras checkpoints to monitor the loss and only save when it improves
-filepath="../checkpoints/CNN_LSTM_scratch_v3-{epoch:02d}-{loss:.5f}.hdf5"
-checkpointCallBack = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+#filepath="../checkpoints/CNN_LSTM_scratch_v3-{epoch:02d}-{loss:.5f}.hdf5"
+#checkpointCallBack = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 
 # Setup tensorboard
 # tbCallBack = TensorBoard(log_dir='./graph', histogram_freq=1, write_graph=True, write_images=True)
@@ -142,18 +144,23 @@ checkpointCallBack = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_b
 # Uses a special callback class from models.my_callbacks
 testSeqCallback = predictSeqCallback()
 # Put these in a callback list
-callbacks_list = [checkpointCallBack, testSeqCallback]
+callbacks_list = [testSeqCallback]
 
 
 #############
 ### BEGIN TRAINING THE MODEL
 # This function actually starts the training
 # model.fit(dataX, dataY, epochs=500, batch_size=256, callbacks=callbacks_list, verbose=2)
-model.fit(dataX_train, dataY_train, epochs=30, batch_size=256, validation_data=(dataX_test, dataY_test), verbose=2, callbacks = callbacks_list)
+# The maximum batch size that fits on the TitanX Pascal is 10,000
+model.fit(dataX_test, dataY_test, shuffle='batch', epochs=20, batch_size=10000, validation_data=(dataX_test, dataY_test), verbose=1, callbacks = callbacks_list)
+
+# Model saving now occurs in the callback on epoch end
 
 print("Saving trained model...")
 model_prefix = 'CNN_LSTM_scratch_v3'
 model_path = "../trained_models/" + model_prefix + ".h5"
 save_model(model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
 
+
+print(">>> ENDING TIME:", str(time.strftime("%m-%d_%H-%M-%S")))
 print("--- {EVERYTHING COMPLETE HOMIEEEEEEEEE} ---")

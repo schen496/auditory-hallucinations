@@ -1,4 +1,5 @@
 import h5py
+import matplotlib.pyplot as plt
 
 # 25/5/2017
 # This piece of code reads the contents of the generated dataset h5py file to make sure all the dimensions are correct
@@ -10,7 +11,7 @@ if USE_TITANX:
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-data_file = data_dir + 'TopAngleFinal_dataX_dataY.h5'
+data_file = data_dir + 'TopAngle170_dataX_dataY.h5'
 
 with h5py.File(data_file, 'r') as hf:
     print("Reading data from file..")
@@ -28,6 +29,14 @@ with h5py.File(data_file, 'r') as hf:
     print("dataY_train.shape:", dataY_train.shape)
     print("dataX_test.shape:", dataX_test.shape)
     print("dataY_test.shape:", dataY_test.shape)
+
+    for n in range(190,200):
+        for i in range(3):
+            img = hf['dataX_train'][n][:, :, i]
+            plt.subplot(3, 1, i + 1)
+            plt.imshow(img, cmap='gray')
+        plt.show()
+
 
 
 

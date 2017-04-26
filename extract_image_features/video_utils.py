@@ -92,8 +92,16 @@ def createSpaceTimeImagesforOneVideo(video, CNN_window):
         l_idx = i
         r_idx = l_idx + (CNN_window)
         curr_stack = video[l_idx:r_idx, :, :] # Extracts (3,224,224)
-        curr_stack = np.reshape(curr_stack,(frame_h,frame_w,CNN_window))  # reshapes to (224,224,3)
-        space_time_single_vid[i,:,:,:] = curr_stack
+
+        # For some reason, np.reshape (170,170,3) to (3,170,170) causes a very weird duplication of images
+        #curr_stack = np.reshape(curr_stack,(frame_h,frame_w,CNN_window))  # reshapes to (224,224,3)
+
+        # Define out own reshape function
+        new_stack = np.zeros((frame_h, frame_w, CNN_window))
+        for j in range(CNN_window):
+            new_stack[:, :, j] = curr_stack[j, :, :]
+
+        space_time_single_vid[i,:,:,:] = new_stack
     return space_time_single_vid
 
 def createSpaceTimeImages(video_data, CNN_window=3):

@@ -143,7 +143,7 @@ if os.path.exists("./checkpoints/" + model_name):
 model.fit(dataX, dataY, epochs=50, batch_size=256, verbose=2)
 
 print("Saving trained model...")
-model_prefix = 'CNN_LSTM_scratch_v2'
+model_prefix = 'CNN_LSTM_scratch_v2_again'
 model_path = "../trained_models/" + model_prefix + ".h5"
 save_model(model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
 

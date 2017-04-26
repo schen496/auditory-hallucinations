@@ -21,7 +21,7 @@ if USE_TITANX:
     data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
-file_name = data_dir + 'TopAngleFinal_dataX_dataY.h5'
+file_name = data_dir + 'TopAngle170_dataX_dataY.h5'
 
 # Open the h5py file
 with h5py.File(file_name, 'r') as hf:

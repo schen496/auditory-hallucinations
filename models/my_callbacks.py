@@ -4,6 +4,7 @@ import numpy as np
 import math
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+from keras.models import save_model
 
 class predictSeqCallback(Callback):
     def on_train_begin(self, logs={}):
@@ -24,6 +25,12 @@ class predictSeqCallback(Callback):
         if model_has_validation_data:
             test_mean_error = predictSequence(epoch, self.model, 5000, self.model.validation_data[0], self.model.validation_data[1])
             self.test_mean_errors.append(test_mean_error)
+
+        # Save the model at every epoch end
+        print("Saving trained model...")
+        model_prefix = 'CNN_LSTM_scratch_v3'
+        model_path = "../trained_models/" + model_prefix + ".h5"
+        save_model(self.model, model_path, overwrite=True)  # saves weights, network topology and optimizer state (if any)
         return
 
     def on_batch_begin(self, batch, logs={}):

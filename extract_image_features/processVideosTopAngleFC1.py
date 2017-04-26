@@ -1,17 +1,19 @@
 # 25/4/2017
-# This piece of code will extract the frames from the directory of videos, greyscale and concatenate them. It will then
-# save a single video to the corresponding index of an h5py file, and pair it with the correct audio vector.
-# The script will incrementally add to the h5py such that the total output is:
+# This piece of code will run frames through vgg-19
 # 'video_dset' = (112392,224,224,3)
 # 'audio_dset' = (112392,18)
 
 from extract_image_features.video_utils import *
+import numpy as np
+from extract_image_features.keras_pretrained_models.imagenet_utils import preprocess_input
+from keras.models import Model
+from extract_image_features.keras_pretrained_models.vgg19 import VGG19
 
 ### SET TO TRUE IF USING TITANX LINUX MACHINE
 USE_TITANX = True
 
 ### Define video processing dimensions
-frame_h = 170  # (60,60) maybe too small
+frame_h = 224  # (60,60) maybe too small
 frame_w = frame_h
 
 
@@ -21,7 +23,7 @@ if USE_TITANX:
 else:  # Working on MacBook Pro
     data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-data_file_name = data_extern_dest + 'TopAngle'+ str(frame_h) + '_dataX_dataY.h5'
+data_file_name = data_extern_dest + 'TopAngleFC1_dataX_dataY.h5'
 
 ### LOADING VIDEOS ###
 print ("--- Loading video and audio filenames...")
@@ -46,7 +48,6 @@ audio_f_files = [os.path.join(audio_feature_dir, file_i)
 
 num_audio_f = len(audio_f_files)
 print("num_audio_f: ", num_audio_f)
-
 
 ### MAIN FUNCTION LOOP FOR PROCESSING TRAINING SET ###
 for i in range(num_audio_f):  # Loop over all audio files
@@ -74,13 +75,32 @@ for i in range(num_audio_f):  # Loop over all audio files
         print ("space_time_image.shape:", space_time_images.shape)
         (num_frames, frame_h, frame_w, channels) = space_time_images.shape
 
+        ########## RUN THE SPACETIME IMAGES THROUGH VGG19
+        print("--- Running through VGG19 FC1 layer...")
+        # Build the model
+        base_model = VGG19(weights='imagenet')
+        model = Model(input=base_model.input,
+                      output=base_model.get_layer('fc1').output)  # Only take the FC2 layer output
+
+        # Preallocate matrix output
+        CNN_FC_output = np.zeros((num_frames, 1, 4096))  # (1,8377,1,4096) -> FC2 outputs dimensions (1,4096)
+
+        for frame_num in tqdm(range(num_frames)):
+            img = space_time_images[frame_num]
+            x = np.expand_dims(img, axis=0)
+            x = preprocess_input(x)
+            fc1_features = model.predict(x)  # Predict the FC2 features from VGG19, output shape is (1,4096)
+
+            CNN_FC_output[frame_num] = fc1_features  # Save the FC2 features to a matrix
+        print("CNN_FC_output.shape:", CNN_FC_output.shape)  # (8377,1,4096)
+
         ########### CREATE FINAL DATASET, concatenate FC output with audio vectors
         # To avoid memory problems, we incrementally add to h5py file. A single video is processed and dumped to the h5py
         if i == 0 and j == 0:
             # If this is the first video file, you need to create the first entry matrix
             with h5py.File(data_file_name, 'w') as f:
                 # Create the dataset in the h5py file
-                video_dset = f.create_dataset("dataX_train", space_time_images.shape, maxshape=(None, frame_h, frame_w, channels))  # maxshape = (None, 224,224,3)
+                video_dset = f.create_dataset("dataX_train", CNN_FC_output.shape, maxshape=(None, 1, 4096))  # maxshape = (None, 224,224,3)
 
                 # Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
                 final_audio_vector = createAudioVectorDatasetForOneVid(audio_features,space_time_images.shape)  # (8377, 18)
@@ -88,7 +108,7 @@ for i in range(num_audio_f):  # Loop over all audio files
                 audio_dset = f.create_dataset("dataY_train", final_audio_vector.shape, maxshape=(None, 18))
 
                 print("Writing data to file...")
-                video_dset[:] = space_time_images
+                video_dset[:] = CNN_FC_output
                 audio_dset[:] = final_audio_vector
 
                 print("video_dset.shape:", video_dset.shape)
@@ -104,7 +124,7 @@ for i in range(num_audio_f):  # Loop over all audio files
                 print("Writing data to file...")
                 video_dset = hf['dataX_train']
                 video_dset.resize(video_dset.len() + num_frames, axis=0)
-                video_dset[-num_frames:] = space_time_images
+                video_dset[-num_frames:] = CNN_FC_output
                 audio_dset = hf['dataY_train']
                 audio_dset.resize(audio_dset.len() + num_frames, axis=0)
                 audio_dset[-num_frames:] = final_audio_vector
@@ -140,10 +160,29 @@ space_time_images = createSpaceTimeImagesforOneVideo(processed_video,window) # (
 print ("space_time_image.shape:", space_time_images.shape)
 (num_frames, frame_h, frame_w, channels) = space_time_images.shape
 
+########## RUN THE SPACETIME IMAGES THROUGH VGG19
+print("--- Running through VGG19 FC2 layer...")
+# Build the model
+base_model = VGG19(weights='imagenet')
+model = Model(input=base_model.input,
+              output=base_model.get_layer('fc1').output)  # Only take the FC2 layer output
+
+# Preallocate matrix output
+CNN_FC_output = np.zeros((num_frames, 1, 4096))  # (1,8377,1,4096) -> FC2 outputs dimensions (1,4096)
+
+for frame_num in tqdm(range(num_frames)):
+    img = space_time_images[frame_num]
+    x = np.expand_dims(img, axis=0)
+    x = preprocess_input(x)
+    fc1_features = model.predict(x)  # Predict the FC2 features from VGG19, output shape is (1,4096)
+
+    CNN_FC_output[frame_num] = fc1_features  # Save the FC2 features to a matrix
+print("CNN_FC_output.shape:", CNN_FC_output.shape)  # (1,8377,1,4096)
+
 # Need to create a new dataset in the original h5py file for test set that is separate from training set
 with h5py.File(data_file_name, 'a') as f:
-    video_dset = f.create_dataset("dataX_test", space_time_images.shape,
-                                  maxshape=(None, frame_h, frame_w, channels))  # maxshape = (None, 224,224,3)
+    video_dset = f.create_dataset("dataX_test", CNN_FC_output.shape,
+                                  maxshape=(None, 1, 4096))  # maxshape = (None, 224,224,3)
 
     # Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
     final_audio_vector = createAudioVectorDatasetForOneVid(audio_features, space_time_images.shape)  # (8377, 18)
@@ -151,7 +190,7 @@ with h5py.File(data_file_name, 'a') as f:
     audio_dset = f.create_dataset("dataY_test", final_audio_vector.shape, maxshape=(None, 18))
 
     print("Writing data to file...")
-    video_dset[:] = space_time_images
+    video_dset[:] = CNN_FC_output
     audio_dset[:] = final_audio_vector
 
     print("video_dset.shape:", video_dset.shape)
