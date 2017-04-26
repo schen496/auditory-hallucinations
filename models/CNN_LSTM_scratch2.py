@@ -17,7 +17,6 @@ from models.my_callbacks import *
 
 USE_TITANX = True
 
-
 def createModel(image_dim, audio_vector_dim):
     (img_rows, img_cols, img_channels) = image_dim  # (224,224,3)
     input_img = Input(shape=(img_rows, img_cols, img_channels))
@@ -98,10 +97,10 @@ data_file = data_dir + 'TopAngleFinal_dataX_dataY.h5'
 
 with h5py.File(data_file, 'r') as hf:
     print("Reading data from file..")
-    dataX_sample = hf['dataX'][0]
-    dataY_sample = hf['dataY'][0]
-print("dataX_sample.shape:", dataX_sample.shape)
-print("dataY_sample.shape:", dataY_sample.shape)
+    dataX_sample = hf['dataX_train'][0]
+    dataY_sample = hf['dataY_train'][0]
+    print("dataX_sample.shape:", dataX_sample.shape)
+    print("dataY_sample.shape:", dataY_sample.shape)
 
 (num_frames, frame_h, frame_w, channels) = dataX_sample.shape  # (8377,224,224,3)
 audio_vector_dim = dataY_sample.shape[1]
