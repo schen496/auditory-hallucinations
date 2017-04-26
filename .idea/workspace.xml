@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62cad7d-864b-45f8-87b8-39b18029de0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/hd5MultFileAppendUT.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unitTests/hd5MultFileUT.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq1_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq1_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq2_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq2_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq3_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq3_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq3a_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq3a_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq4_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq4_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq5_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq5_audio_vectors.mat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/audio_vectors/seq5a_audio_vectors.mat" afterPath="$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq5a_audio_vectors.mat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" afterPath="$PROJECT_DIR$/.idea/auditory-hallucinations.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/my_callbacks.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/MATLAB/extractAudioFeaturesMultFiles.m" afterPath="$PROJECT_DIR$/code/MATLAB/extractAudioFeaturesMultFiles.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/extract_cont_TopAngles.py" afterPath="$PROJECT_DIR$/extract_image_features/extract_cont_TopAngles.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" afterPath="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/video_utils.py" afterPath="$PROJECT_DIR$/extract_image_features/video_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/old_models/convLSTM_UnitTest.py" afterPath="$PROJECT_DIR$/models/old_models/convLSTM_UnitTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py" afterPath="$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,9 +43,9 @@
     <SUITE FILE_PATH="coverage/auditory-hallucinations$matplotlib_test.coverage" NAME="matplotlib_test Coverage Results" MODIFIED="1491829266227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_FC_extract_single_vids.coverage" NAME="VGG19_FC_extract_single_vids Coverage Results" MODIFIED="1492660341189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$hd5MultFileUT.coverage" NAME="hd5MultFileUT Coverage Results" MODIFIED="1493143979246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngle.coverage" NAME="processVideosTopAngle Coverage Results" MODIFIED="1493160752069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngle.coverage" NAME="processVideosTopAngle Coverage Results" MODIFIED="1493175830041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$join_video_anglles.coverage" NAME="join_video_anglles Coverage Results" MODIFIED="1492703630781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$checkAudioVectorsSpaceTImeConcat.coverage" NAME="checkAudioVectorsSpaceTImeConcat Coverage Results" MODIFIED="1493160539212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$checkAudioVectorsSpaceTImeConcat.coverage" NAME="checkAudioVectorsSpaceTImeConcat Coverage Results" MODIFIED="1493175112421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -68,10 +56,30 @@
       <file leaf-file-name="processVideosTopAngle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkAudioVectorsAndVideoDims.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CNN_LSTM_scratch2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding>
-                <element signature="e#386#434#0" expanded="true" />
+                <element signature="e#1#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/code/LSTM.py" />
-        <option value="$PROJECT_DIR$/convLSTM.py" />
         <option value="$PROJECT_DIR$/LSTM.py" />
         <option value="$PROJECT_DIR$/extract_image_features/matplotlib_test.py" />
         <option value="$PROJECT_DIR$/extract_image_features/VGG19_features.py" />
@@ -139,7 +145,11 @@
         <option value="$PROJECT_DIR$/unitTests/hd5MultFileAppendUT.py" />
         <option value="$PROJECT_DIR$/unitTests/checkAudioVectorsSpaceTImeConcat.py" />
         <option value="$PROJECT_DIR$/extract_image_features/video_utils.py" />
+        <option value="$PROJECT_DIR$/models/old_models/CNN_LSTM_scratch2.py" />
         <option value="$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py" />
+        <option value="$PROJECT_DIR$/models/Callbacks.py" />
+        <option value="$PROJECT_DIR$/models/my_callbacks.py" />
+        <option value="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" />
         <option value="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
       </list>
     </option>
@@ -171,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -198,9 +207,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extract_image_features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audio_vectors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audio_vectors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TEST_SET" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,10 +291,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/audio_vectors" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/code/MATLAB/old_audio_vectors" />
       <recent name="$PROJECT_DIR$/extract_image_features/old_code" />
       <recent name="$PROJECT_DIR$/extract_image_features" />
-      <recent name="$PROJECT_DIR$/model_tester/figures" />
     </key>
   </component>
   <component name="RunManager" selected="Python.processVideosTopAngle">
@@ -564,7 +634,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1212" height="1057" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22359736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -572,18 +642,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1920" y="-423" width="1080" height="1875" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31983805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16295546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="872" y="45" width="1048" height="1035" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -619,20 +689,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/MATLAB/old_audio_vectors/seq1_audio_vectors.mat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extract_image_features/old_code/VGG16_features.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="63" lean-forward="false" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extract_image_features/old_code/VGG16_features2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -692,13 +748,7 @@
     <entry file="file://$PROJECT_DIR$/extract_image_features/space_time_concat_util.py" />
     <entry file="file://$PROJECT_DIR$/pretrained_models/vgg19.py" />
     <entry file="file://$PROJECT_DIR$/pretrained_models/extract_VGG19.py" />
-    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/LICENSE" />
     <entry file="file://$PROJECT_DIR$/models/old_models/cnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
@@ -713,20 +763,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/extract_VGG19.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/vgg19.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/extract_VGG19.py" />
+    <entry file="file://$PROJECT_DIR$/keras_pretrained_models/vgg19.py" />
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -785,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model_tester/FC_LSTM_TopAngle_Tester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -817,13 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="32" column="81" lean-forward="false" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_Tester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="86" column="12" lean-forward="false" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -883,28 +907,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_Tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/my_callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#66#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/extract_image_features/video_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="43" column="33" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="43" selection-end-column="33" />
+        <state relative-caret-position="601">
+          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="107" lean-forward="false" selection-start-line="3" selection-start-column="107" selection-end-line="3" selection-end-column="107" />
+        <state relative-caret-position="735">
+          <caret line="50" column="38" lean-forward="false" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#386#434#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="540">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -6,7 +6,6 @@
 # 'audio_dset' = (112392,18)
 
 from extract_image_features.video_utils import *
-import numpy as np
 
 ### SET TO TRUE IF USING TITANX LINUX MACHINE
 USE_TITANX = False
@@ -45,23 +44,22 @@ print("num_audio_f: ", num_audio_f)
 
 ### MAIN FUNCTION LOOP ###
 for i in range(num_audio_f):  # Loop over all audio files
-    print ("--------------------{ }-----------------------")
     audio_prefix, audio_vector_length, audio_features = returnAudioVectors(i, audio_f_files)
-
+    print ("--------------------{ " + str(audio_prefix) + " }-----------------------")
     # Find all the linked videos for the given audio vector
     linked_video_f = findMatchingVideos(audio_prefix, video_files)
     print(audio_f_files[i])
     print(linked_video_f)
 
     for video_filename in linked_video_f:
-        # Return the angle_name to name the file correctly
-        angle_name = returnAngleName(video_filename)
-        print ("angle_name:", angle_name)
 
         # Process the videos linked to a particular audio vector
         ######## PROCESS VIDEO TO BLACK AND WHITE
         print("--- Processing video to greyscale...")
-        processed_video = processOneVideo(audio_vector_length, video_filename, normalize=False)
+        frame_h = 60
+        frame_w = 60
+        output_dimensions = (frame_h,frame_w)
+        processed_video = processOneVideo(audio_vector_length, video_filename, output_dimensions=output_dimensions, normalize=False)
         print("processed_video.shape:", processed_video.shape)
 
         ######### CONCATENATE INTO SPACETIME IMAGE
@@ -77,33 +75,73 @@ for i in range(num_audio_f):  # Loop over all audio files
             # If this is the first video file, you need to create the first entry matrix
             with h5py.File(data_file_name, 'w') as f:
                 print ("Writing data to file...")
-                video_dset = f.create_dataset("dataX", space_time_images.shape, maxshape=(None, frame_h, frame_w, channels))  # maxshape = (None, 224,224,3)
+                video_dset = f.create_dataset("dataX_train", space_time_images.shape, maxshape=(None, frame_h, frame_w, channels))  # maxshape = (None, 224,224,3)
                 video_dset[:] = space_time_images
                 print("video_dset.shape:", video_dset.shape)
 
                 # Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
                 final_audio_vector = createAudioVectorDatasetForOneVid(audio_features,space_time_images.shape)  # (8377, 18)
                 print("final_audio_vector.shape:", final_audio_vector.shape)
-                audio_dset = f.create_dataset("dataY", final_audio_vector.shape, maxshape=(None, 18))
+                audio_dset = f.create_dataset("dataY_train", final_audio_vector.shape, maxshape=(None, 18))
                 audio_dset[:] = final_audio_vector
                 print("audio_dset.shape:", audio_dset.shape)
         else:
             with h5py.File(data_file_name, 'a') as hf:
                 print ("Writing data to file...")
-                video_dset = hf['dataX']
-                numFrames = space_time_images.shape[0]
-                video_dset.resize(video_dset.len() + numFrames, axis=0)
-                video_dset[-numFrames:] = space_time_images
+                video_dset = hf['dataX_train']
+                video_dset.resize(video_dset.len() + num_frames, axis=0)
+                video_dset[-num_frames:] = space_time_images
                 print("video_dset.shape:", video_dset.shape)
 
                 # Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
                 final_audio_vector = createAudioVectorDatasetForOneVid(audio_features, space_time_images.shape)  # (8377, 18)
                 print("final_audio_vector.shape:", final_audio_vector.shape)
-                audio_dset = hf['dataY']
-                audio_dset.resize(audio_dset.len() + numFrames, axis=0)
-                audio_dset[-numFrames:] = final_audio_vector
+                audio_dset = hf['dataY_train']
+                audio_dset.resize(audio_dset.len() + num_frames, axis=0)
+                audio_dset[-num_frames:] = final_audio_vector
                 print("audio_dset.shape:", audio_dset.shape)
 
         print ("Current video complete!")
+
+####### PROCESSING THE TEST SET
+# There is only one video for test set
+test_video_filename = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/4-24_VIDAUD/EXPORTS/TEST_SET/seq7TEST_angle1.mp4'
+test_audio_vector_filename = '../audio_vectors/TEST_SET/seq7TEST_audio_vectors.mat'
+
+print ("--------------------{ PROCESSING TEST SET }-----------------------")
+mat_contents = sio.loadmat(test_audio_vector_filename)  # 18 x n-2
+audio_features = mat_contents['audio_vectors']
+audio_vector_length = audio_features.shape[1]
+
+print("--- Processing video to greyscale...")
+frame_h = 60
+frame_w = 60
+output_dimensions = (frame_h,frame_w)
+processed_video = processOneVideo(audio_vector_length, test_video_filename, output_dimensions=output_dimensions, normalize=False)
+print("processed_video.shape:", processed_video.shape)
+
+######### CONCATENATE INTO SPACETIME IMAGE
+print ("--- Concatenating into Spacetime image...")
+window = 3
+space_time_images = createSpaceTimeImagesforOneVideo(processed_video,window) # (8377, 224, 224, 3)
+print ("space_time_image.shape:", space_time_images.shape)
+(num_frames, frame_h, frame_w, channels) = space_time_images.shape
+
+# Need to create a new dataset in the original h5py file for test set that is separate from training set
+with h5py.File(data_file_name, 'a') as f:
+    print("Writing data to file...")
+    video_dset = f.create_dataset("dataX_test", space_time_images.shape,
+                                  maxshape=(None, frame_h, frame_w, channels))  # maxshape = (None, 224,224,3)
+    video_dset[:] = space_time_images
+    print("video_dset.shape:", video_dset.shape)
+
+    # Normalization of the audio_vectors occurs in this function -> Hanoi forgot to normalize in MATLAB!!!!
+    final_audio_vector = createAudioVectorDatasetForOneVid(audio_features, space_time_images.shape)  # (8377, 18)
+    print("final_audio_vector.shape:", final_audio_vector.shape)
+    audio_dset = f.create_dataset("dataY_test", final_audio_vector.shape, maxshape=(None, 18))
+    audio_dset[:] = final_audio_vector
+    print("audio_dset.shape:", audio_dset.shape)
+
+print ("Current video complete!")
 
 print ("--- {EVERYTHING COMPLETE HOMIEEEEEEEEE} ---")

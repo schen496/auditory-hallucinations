@@ -29,7 +29,7 @@ audio_f_files = [os.path.join(audio_feature_dir, file_i)
 num_audio_f = len(audio_f_files)
 print("num_audio_f: ", num_audio_f)
 
-for i in [5]:  # Loop over all audio files
+for i in range(num_audio_f):  # Loop over all audio files
     print ("-----------------------------------------------")
     audio_prefix, audio_vector_length, audio_features = returnAudioVectors(i, audio_f_files)
 
@@ -47,3 +47,5 @@ for i in [5]:  # Loop over all audio files
                 img = vid.get_data(i)
             num_frames += 1
         print ("num_frames:",num_frames)
+
+print ("----{ CHECKING COMPLETE }-----")
