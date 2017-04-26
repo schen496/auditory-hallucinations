@@ -66,7 +66,7 @@ def returnAudioVectors(audio_idx, audio_f_files):
     audio_vectors = mat_contents['audio_vectors']
     audio_vector_length = audio_vectors.shape[1]
     # print(audio_f_files[0])
-    print("audio_vectors.shape: ", audio_vectors.shape)
+    #print("audio_vectors.shape: ", audio_vectors.shape)
 
     # Extract the file prefix using regular expressions
     start = audio_f_file.find('seq')

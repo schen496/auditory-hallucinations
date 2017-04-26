@@ -111,7 +111,7 @@ dataX_train = HDF5Matrix(data_file, 'dataX_train')
 dataY_train = HDF5Matrix(data_file, 'dataY_train')
 
 dataX_test = HDF5Matrix(data_file, 'dataX_test')
-dataY_test= HDF5Matrix(data_file, 'dataY_test')
+dataY_test = HDF5Matrix(data_file, 'dataY_test')
 
 #############
 ### BUILD THE MODEL
