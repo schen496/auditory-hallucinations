@@ -8,20 +8,20 @@
 from extract_image_features.video_utils import *
 
 ### SET TO TRUE IF USING TITANX LINUX MACHINE
-USE_TITANX = False
+USE_TITANX = True
 
 ### DEFINE OUTPUT DIRECTORY ###
 if USE_TITANX:
-    data_extern_dest = '/home/zanoi/ZANOI/auditory_hallucinations_data/TopAngle_data/'
+    data_extern_dest = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:  # Working on MacBook Pro
     data_extern_dest = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-data_file_name = data_extern_dest + 'TopAngleFinal_dataX_dataY.h5'
+data_file_name = data_extern_dest + 'TopAngle224_dataX_dataY.h5'
 
 ### LOADING VIDEOS ###
 print ("--- Loading video and audio filenames...")
 if USE_TITANX:
-    video_dir = '/home/zanoi/ZANOI/auditory_hallucination_videos'
+    video_dir = '/home/zanoi/ZANOI/auditory_hallucinations_videos'
 else: # Working on MacBook Pro
     video_dir = "/Volumes/SAMSUNG_SSD_256GB/ADV_CV/4-24_VIDAUD/EXPORTS"
 
@@ -56,8 +56,8 @@ for i in range(num_audio_f):  # Loop over all audio files
         # Process the videos linked to a particular audio vector
         ######## PROCESS VIDEO TO BLACK AND WHITE
         print("--- Processing video to greyscale...")
-        frame_h = 60
-        frame_w = 60
+        frame_h = 200  # (60,60) maybe too small
+        frame_w = 200
         output_dimensions = (frame_h,frame_w)
         processed_video = processOneVideo(audio_vector_length, video_filename, output_dimensions=output_dimensions, normalize=False)
         print("processed_video.shape:", processed_video.shape)
@@ -111,7 +111,11 @@ for i in range(num_audio_f):  # Loop over all audio files
 
 ####### PROCESSING THE TEST SET
 # There is only one video for test set
-test_video_filename = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/4-24_VIDAUD/EXPORTS/TEST_SET/seq7TEST_angle1.mp4'
+if USE_TITANX:
+    test_video_filename = '/home/zanoi/ZANOI/auditory_hallucinations_video/TEST_SET/seq7TEST_angle1.mp4'
+else:  # Working on MacBook Pro
+    test_video_filename = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/4-24_VIDAUD/EXPORTS/TEST_SET/seq7TEST_angle1.mp4'
+
 test_audio_vector_filename = '../audio_vectors/TEST_SET/seq7TEST_audio_vectors.mat'
 
 print ("--------------------{ PROCESSING TEST SET }-----------------------")

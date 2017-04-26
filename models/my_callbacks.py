@@ -18,8 +18,12 @@ class predictSeqCallback(Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         #y_pred = self.model.predict(self.model.validation_data[0])
-        test_mean_error = predictSequence(epoch, self.model, 5000, self.model.validation_data[0], self.model.validation_data[1])
-        self.test_mean_errors.append(test_mean_error)
+        # there 7578 frames in test set
+        model_has_validation_data = hasattr(self.model, 'validation_data')
+        print (model_has_validation_data)
+        if model_has_validation_data:
+            test_mean_error = predictSequence(epoch, self.model, 5000, self.model.validation_data[0], self.model.validation_data[1])
+            self.test_mean_errors.append(test_mean_error)
         return
 
     def on_batch_begin(self, batch, logs={}):

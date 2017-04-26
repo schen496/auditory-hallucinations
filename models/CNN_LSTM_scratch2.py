@@ -13,7 +13,8 @@ from keras.utils.io_utils import HDF5Matrix
 import h5py
 from models.my_callbacks import *
 
-# This is a CNN+LSTM intended to train from scratch directly from the video frames
+# 24/4/2017
+# This is a CNN+LSTM intended to train from scratch directly from the video frames with dimensions 200x200
 
 USE_TITANX = True
 
@@ -41,15 +42,16 @@ def createModel(image_dim, audio_vector_dim):
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                strides=(4, 4))(x)
 
-    x = Conv2D(filters=64,
+    x = Conv2D(filters=128,
                kernel_size=(4, 4),
                activation='relu',
                padding='same',
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
                strides=(2, 2))(x)
 
-    x = Conv2D(filters=128,
+    x = Conv2D(filters=256,
                kernel_size=(2, 2),
+               input_shape=image_dim,
                activation='relu',
                padding='same',
                kernel_initializer=RandomNormal(mean=0.0, stddev=0.01, seed=None),
@@ -58,7 +60,7 @@ def createModel(image_dim, audio_vector_dim):
     x = Flatten()(x)
     x = Dense(1024, activation='relu', name='1st_FC')(x)
     x = Dropout(0.2)(x)
-    #x = Dense(512, activation='relu', name='2nd_FC')(x)
+    x = Dense(512, activation='relu', name='2nd_FC')(x)
     # x = TimeDistributedDense(1)(x)
 
     # Note that LSTM expects input shape: (nb_samples, timesteps, feature_dim)
@@ -71,7 +73,7 @@ def createModel(image_dim, audio_vector_dim):
     model = Model(inputs=input_img, outputs=network_output)
 
     # Use the Adam optimizer for gradient descent
-    adam = Adam(lr=0.5e-6)
+    adam = Adam(lr=0.4e-6)
 
     model.compile(loss='mean_squared_error', optimizer='adam')
     print(model.summary())
@@ -82,19 +84,17 @@ def createModel(image_dim, audio_vector_dim):
 # Testing if the model compiles
 #model = createModel((224, 224, 3), 18)
 
-
 #############
 ### READING THE DATASET
 # Define the external SSD where the dataset residesin
 if USE_TITANX:
-    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/TopAngle_data/'
+    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
 data_file = data_dir + 'TopAngleFinal_dataX_dataY.h5'
 
 # Load first element of data to extract information on video
-
 with h5py.File(data_file, 'r') as hf:
     print("Reading data from file..")
     dataX_sample = hf['dataX_train'][0]
@@ -102,13 +102,21 @@ with h5py.File(data_file, 'r') as hf:
     print("dataX_sample.shape:", dataX_sample.shape)
     print("dataY_sample.shape:", dataY_sample.shape)
 
-(num_frames, frame_h, frame_w, channels) = dataX_sample.shape  # (8377,224,224,3)
-audio_vector_dim = dataY_sample.shape[1]
+    dataX_train = hf['dataX_train']  # Adding the [:] actually loads it into memory
+    dataY_train = hf['dataY_train']
+    dataX_test = hf['dataX_test']
+    dataY_test = hf['dataY_test']
+    print("dataX_train.shape:", dataX_train.shape)
+    print("dataY_train.shape:", dataY_train.shape)
+    print("dataX_test.shape:", dataX_test.shape)
+    print("dataY_test.shape:", dataY_test.shape)
+
+(frame_h, frame_w, channels) = dataX_sample.shape  # (8377,224,224,3)
+audio_vector_dim = dataY_sample.shape[0]
 
 # Load data into HDF5Matrix object, which reads the file from disk and does not put it into RAM
 dataX_train = HDF5Matrix(data_file, 'dataX_train')
 dataY_train = HDF5Matrix(data_file, 'dataY_train')
-
 dataX_test = HDF5Matrix(data_file, 'dataX_test')
 dataY_test = HDF5Matrix(data_file, 'dataY_test')
 
@@ -118,14 +126,14 @@ model = createModel((frame_h, frame_w, channels), audio_vector_dim)
 
 #############
 ### CHECK FOR EXISTING MODEL
-model_name = ''
-if os.path.exists("./checkpoints/" + model_name):
-    model.load_weights("./checkpoints/" + model_name)
+#model_name = ''
+#if os.path.exists("../checkpoints/" + model_name):
+    #model.load_weights("../checkpoints/" + model_name)
 
 #############
 ###Define a bunch of callbacks
 # Set up Keras checkpoints to monitor the loss and only save when it improves
-filepath="./checkpoints/CNN_LSTM-{epoch:02d}-{loss:.5f}.hdf5"
+filepath="../checkpoints/CNN_LSTM_scratch_v3-{epoch:02d}-{loss:.5f}.hdf5"
 checkpointCallBack = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 
 # Setup tensorboard
@@ -141,7 +149,7 @@ callbacks_list = [checkpointCallBack, testSeqCallback]
 ### BEGIN TRAINING THE MODEL
 # This function actually starts the training
 # model.fit(dataX, dataY, epochs=500, batch_size=256, callbacks=callbacks_list, verbose=2)
-model.fit(dataX_train, dataY_train, epochs=50, batch_size=1024, validation_data=(dataX_test, dataY_test), verbose=2, callbacks = callbacks_list)
+model.fit(dataX_train, dataY_train, epochs=30, batch_size=256, validation_data=(dataX_test, dataY_test), verbose=2, callbacks = callbacks_list)
 
 print("Saving trained model...")
 model_prefix = 'CNN_LSTM_scratch_v3'

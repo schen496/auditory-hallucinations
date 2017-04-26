@@ -3,10 +3,10 @@ import h5py
 # 25/5/2017
 # This piece of code reads the contents of the generated dataset h5py file to make sure all the dimensions are correct
 
-USE_TITANX = False
+USE_TITANX = True
 
 if USE_TITANX:
-    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/TopAngle_data/'
+    data_dir = '/home/zanoi/ZANOI/auditory_hallucinations_data/'
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
