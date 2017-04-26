@@ -11,7 +11,7 @@ from extract_image_features.video_utils import *
 USE_TITANX = True
 
 ### Define video processing dimensions
-frame_h = 170  # (60,60) maybe too small
+frame_h = 100  # (60,60) maybe too small
 frame_w = frame_h
 
 

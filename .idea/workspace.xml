@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62cad7d-864b-45f8-87b8-39b18029de0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch_figures/CNN_LSTM_scratch-pred_TopAngle9.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extract_single_vids.py" afterPath="$PROJECT_DIR$/extract_image_features/VGG19_FC_extract_single_vids.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" afterPath="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_image_features/video_utils.py" afterPath="$PROJECT_DIR$/extract_image_features/video_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch2_Tester.py" afterPath="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch2_Tester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" afterPath="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" afterPath="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/FC_LSTM_TopAngle.py" afterPath="$PROJECT_DIR$/models/FC_LSTM_TopAngle.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/my_callbacks.py" afterPath="$PROJECT_DIR$/models/my_callbacks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unitTests/checkDatasetXY.py" afterPath="$PROJECT_DIR$/unitTests/checkDatasetXY.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,7 +28,7 @@
     <SUITE FILE_PATH="coverage/auditory-hallucinations$FC_LSTM_Tester.coverage" NAME="FC_LSTM_Tester Coverage Results" MODIFIED="1492708648349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model_tester" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$video_extraction.coverage" NAME="video_extraction Coverage Results" MODIFIED="1492521686932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$hd5MultFileUT.coverage" NAME="hd5MultFileUT Coverage Results" MODIFIED="1493143979246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM_scratch.coverage" NAME="CNN_LSTM_scratch Coverage Results" MODIFIED="1493216051378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM_scratch.coverage" NAME="CNN_LSTM_scratch Coverage Results" MODIFIED="1493247740209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19__1_.coverage" NAME="extract_VGG19 (1) Coverage Results" MODIFIED="1492526998921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pretrained_models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$FC_LSTM.coverage" NAME="FC_LSTM Coverage Results" MODIFIED="1492703722993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG16_features3.coverage" NAME="VGG16_features3 Coverage Results" MODIFIED="1492402799784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
@@ -70,8 +37,8 @@
     <SUITE FILE_PATH="coverage/auditory-hallucinations$checkDatasetXY.coverage" NAME="checkDatasetXY Coverage Results" MODIFIED="1493237219995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$VGG19_FC_extraction.coverage" NAME="VGG19_FC_extraction Coverage Results" MODIFIED="1492657800032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19__2_.coverage" NAME="extract_VGG19 (2) Coverage Results" MODIFIED="1492527868776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/keras_pretrained_models" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngleFC1.coverage" NAME="processVideosTopAngleFC1 Coverage Results" MODIFIED="1493246102010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM_scratch2.coverage" NAME="CNN_LSTM_scratch2 Coverage Results" MODIFIED="1493244037523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngleFC1.coverage" NAME="processVideosTopAngleFC1 Coverage Results" MODIFIED="1493246699142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM_scratch2.coverage" NAME="CNN_LSTM_scratch2 Coverage Results" MODIFIED="1493247643766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_cont_TopAngles.coverage" NAME="extract_cont_TopAngles Coverage Results" MODIFIED="1492711908442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$checkVideoProcessingFunctions.coverage" NAME="checkVideoProcessingFunctions Coverage Results" MODIFIED="1493229842560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unitTests" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$extract_VGG19.coverage" NAME="extract_VGG19 Coverage Results" MODIFIED="1492490594512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deep-learning-models" />
@@ -80,7 +47,7 @@
     <SUITE FILE_PATH="coverage/auditory-hallucinations$CNN_LSTM.coverage" NAME="CNN_LSTM Coverage Results" MODIFIED="1492481645832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$ConvLSTM.coverage" NAME="ConvLSTM Coverage Results" MODIFIED="1492741290533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/auditory-hallucinations$join_video_anglles.coverage" NAME="join_video_anglles Coverage Results" MODIFIED="1492703630781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
-    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngle.coverage" NAME="processVideosTopAngle Coverage Results" MODIFIED="1493230045510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
+    <SUITE FILE_PATH="coverage/auditory-hallucinations$processVideosTopAngle.coverage" NAME="processVideosTopAngle Coverage Results" MODIFIED="1493246705750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_image_features" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -91,8 +58,8 @@
       <file leaf-file-name="CNN_LSTM_scratch2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="146" selection-end-column="34" />
+            <state relative-caret-position="468">
+              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
                 <element signature="e#1#10#0" expanded="true" />
               </folding>
@@ -100,14 +67,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="processVideosTopAngleFC1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CNN_LSTM_scratch.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="85" column="16" lean-forward="true" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processVideosTopAngleFC1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
                 <element signature="e#130#178#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processVideosTopAngle.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,17 +166,17 @@
         <option value="$PROJECT_DIR$/models/old_models/CNN_LSTM_scratch2.py" />
         <option value="$PROJECT_DIR$/unitTests/checkAudioVectorsAndVideoDims.py" />
         <option value="$PROJECT_DIR$/models/Callbacks.py" />
-        <option value="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" />
-        <option value="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
         <option value="$PROJECT_DIR$/extract_image_features/video_utils.py" />
         <option value="$PROJECT_DIR$/unitTests/checkVideoProcessingFunctions.py" />
         <option value="$PROJECT_DIR$/unitTests/checkDatasetXY.py" />
         <option value="$PROJECT_DIR$/models/my_callbacks.py" />
         <option value="$PROJECT_DIR$/model_tester/CNN_LSTM_scratch2_Tester.py" />
-        <option value="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" />
         <option value="$PROJECT_DIR$/extract_image_features/VGG19_FC_extract_single_vids.py" />
         <option value="$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py" />
         <option value="$PROJECT_DIR$/models/FC_LSTM_TopAngle.py" />
+        <option value="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
+        <option value="$PROJECT_DIR$/models/CNN_LSTM_scratch2.py" />
+        <option value="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" />
       </list>
     </option>
   </component>
@@ -230,6 +217,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auditory-hallucinations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trained_models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,7 +291,7 @@
       <recent name="$PROJECT_DIR$/extract_image_features" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.processVideosTopAngleFC1">
+  <component name="RunManager" selected="Python.CNN_LSTM_scratch">
     <configuration default="false" name="processVideosTopAngle" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -305,24 +306,6 @@
       <module name="auditory-hallucinations" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="checkDatasetXY" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unitTests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="auditory-hallucinations" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unitTests/checkDatasetXY.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -377,6 +360,24 @@
       <module name="auditory-hallucinations" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CNN_LSTM_scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="auditory-hallucinations" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/CNN_LSTM_scratch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -597,18 +598,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.processVideosTopAngle" />
-      <item index="1" class="java.lang.String" itemvalue="Python.checkDatasetXY" />
-      <item index="2" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2_Tester" />
-      <item index="4" class="java.lang.String" itemvalue="Python.processVideosTopAngleFC1" />
+      <item index="1" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2_Tester" />
+      <item index="3" class="java.lang.String" itemvalue="Python.processVideosTopAngleFC1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.processVideosTopAngleFC1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2_Tester" />
-        <item index="2" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.checkDatasetXY" />
-        <item index="4" class="java.lang.String" itemvalue="Python.processVideosTopAngle" />
+        <item index="0" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.processVideosTopAngle" />
+        <item index="3" class="java.lang.String" itemvalue="Python.processVideosTopAngleFC1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.CNN_LSTM_scratch2_Tester" />
       </list>
     </recent_temporary>
   </component>
@@ -635,9 +636,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="982" y="52" width="938" height="1148" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.22165991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="982" y="52" width="938" height="1148" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14532243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1444548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3996367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -871,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="93" column="23" lean-forward="true" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/extract_image_features/video_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -885,14 +879,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +907,7 @@
         <state relative-caret-position="504">
           <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -950,13 +936,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch2.py">
+    <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="146" selection-end-column="34" />
+        <state relative-caret-position="365">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <element signature="e#1#10#0" expanded="true" />
+            <element signature="e#130#178#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -970,13 +964,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extract_image_features/processVideosTopAngleFC1.py">
+    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding>
-            <element signature="e#130#178#0" expanded="true" />
+            <element signature="e#1#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="85" column="16" lean-forward="true" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

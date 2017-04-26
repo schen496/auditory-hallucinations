@@ -94,7 +94,7 @@ if USE_TITANX:
 else:
     data_dir = '/Volumes/SAMSUNG_SSD_256GB/ADV_CV/data/'
 
-data_file = data_dir + 'TopAngle170_dataX_dataY.h5'
+data_file = data_dir + 'TopAngle100_dataX_dataY.h5'
 
 # Load first element of data to extract information on video
 with h5py.File(data_file, 'r') as hf:
