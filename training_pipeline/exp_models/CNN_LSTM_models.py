@@ -70,8 +70,8 @@ def CNN_LSTM_model(image_dim=(224,224,3), audio_vector_dim=18, learning_rate=0.4
     # Use the Adam optimizer for gradient descent
     adam = Adam(lr=learning_rate)
 
-    model.compile(loss='mean_squared_error', optimizer='adam')
-    print(model.summary())
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
+    # print(model.summary())  # no need to print model summary when doing hyperparameter search
 
     return model
 

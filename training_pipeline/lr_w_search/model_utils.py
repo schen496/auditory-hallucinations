@@ -60,7 +60,7 @@ def load5hpyData(USE_TITANX=True, data_name='TopAngle100_dataX_dataY.h5'):
 
     # Load first element of data to extract information on video
     with h5py.File(data_file, 'r') as hf:
-        print("Reading fukk data from file..")
+        print("Reading full data from file..")
         dataX_train = hf['dataX_train']  # Adding the [:] actually loads it into memory
         dataY_train = hf['dataY_train']
         dataX_test = hf['dataX_test']
@@ -133,6 +133,7 @@ class LossHistory(Callback):
         self.test_losses = []
 
     def on_batch_end(self, batch, logs={}):
+        #print (logs)  # prints {'batch': 0, 'size': 10000, 'loss': 0.00059013645, 'acc': 0.0317}
         self.train_losses.append(logs.get('loss'))
         self.test_losses.append(logs.get('val_loss'))
 
@@ -150,8 +151,45 @@ class AccuracyHistory(Callback):
 ##################################
 # Plotting and saving figure utils
 
-def plotAndSaveData(param_history,y_label,learning_rate_hp,weight_hp,title="Parameter History"):
+def plotAndSaveData(param_train_history,param_test_history, y_label,learning_rate_hp,weight_hp,title="Parameter History"):
     """Saves a matplotlib plot that graphs parameter history
+
+            Args:
+                param_train_history (list): list containing parameter history
+                param_test_history (list): list containing parameter history
+                y_label (string): label for y axis e.g "Loss"
+                learning_rate_hp (float): learning rate hyperparameter e.g 4e-7
+                weight_hp (float): weight scale hyperparameter e.g 0.005
+                title (string): title for saved graph - default="Parameter History"
+
+            Returns:
+                None
+
+            """
+
+    epochs = np.arange(len(param_train_history))  # epochs is 1,2,3...[num items in param values]
+    plt.plot(epochs, param_train_history, 'b')
+    #plt.plot(epochs, param_test_history, 'r')  # Keras doesn't naturally testing acc, only train
+
+    # generate legend
+    blue_patch = mpatches.Patch(color='blue', label='train')
+    #red_patch = mpatches.Patch(color='red', label='test')
+    plt.legend(handles=[blue_patch], prop={'size': 10})
+
+    # Plot the graph
+    plt.xlabel('epochs')
+    plt.ylabel(y_label)
+    title = '%s-{lr:%6f}-{ws:%6f}' % (title, learning_rate_hp, weight_hp)
+    plt.title(title)
+    # plt.show()
+    plt.draw()
+    file_name = '{lr:%8f}-{ws:%6f}.png' % (learning_rate_hp, weight_hp)
+    plt.savefig('../graphs/training_history/' + file_name)
+    plt.close()
+
+def _plotAndSaveData(param_history,y_label,learning_rate_hp,weight_hp,title="Parameter History"):
+    """DEPACRATED - DO NOT USE, not compatible with the way Keras stores histories when using HDF5
+        Saves a matplotlib plot that graphs parameter history
 
             Args:
                 param_history (Callback object): Keras object that contains information on the parameter history
@@ -171,7 +209,12 @@ def plotAndSaveData(param_history,y_label,learning_rate_hp,weight_hp,title="Para
 
     for idx, param in enumerate(param_history):
         param_values = param_history[param]
+
         epochs = np.arange(len(param_values))  # epochs is 1,2,3...[num items in param values]
+        print(param)
+        print(param_values)
+        print(idx)
+        print(colors[idx])
         plt.plot(epochs, param_values, colors[idx])
 
     # generate legend
@@ -237,8 +280,8 @@ def genAndSavePredSpectrum(model,save_img_path, window_length = 300,USE_TITANX=T
         dataY_test = hf['dataY_test'][:]
     print("dataX_test.shape:", dataX_test.shape)
     print("dataY_test.shape:", dataY_test.shape)
-    print("np.max(dataY)", np.max(dataX_test))
-    print("np.min(dataY)", np.min(dataY_test))
+    print("np.max(dataX)", np.max(dataX_test))
+    print("np.max(dataY)", np.max(dataY_test))
 
     (num_frames, frame_h, frame_w, channels) = dataX_test.shape
     num_windows = math.floor(num_frames / window_length)
@@ -249,7 +292,7 @@ def genAndSavePredSpectrum(model,save_img_path, window_length = 300,USE_TITANX=T
 
         trainPredict = model.predict(dataX_test)
         trainScore = math.sqrt(mean_squared_error(dataY_test[pred_idx:end_idx, :], trainPredict[pred_idx:end_idx, :]))
-        print('Train score: %.3f RMSE' % (trainScore))
+        print('Score: %.3f RMSE' % (trainScore))
 
         ##### PLOT RESULTS
         trainPlot = model.predict(dataX_test[pred_idx:end_idx, :])
@@ -270,7 +313,7 @@ def genAndSavePredSpectrum(model,save_img_path, window_length = 300,USE_TITANX=T
         plt.colorbar()
         plt.tight_layout()
         plt.draw()
-        plt.savefig(save_img_path + str(i) + '.png')  # ../graphs/predicted_spectrums/{lr:0.000597}-{ws:0.000759}/1.png
+        plt.savefig(save_img_path + '/' + str(i) + '.png')  # ../graphs/predicted_spectrums/{lr:0.000597}-{ws:0.000759}/1.png
         # plt.show()
         plt.close()
 
@@ -284,7 +327,7 @@ def plotAndSaveSession(learning_rates,weight_scales,final_accuracies):
     fig = plt.figure()
     ax = fig.gca(projection='3d')
 
-    surf = ax.scatter(learning_rates, weight_scales, final_accuracies)
+    surf = ax.scatter(learning_rates, weight_scales, final_accuracies*100)
 
     ax.set_xlabel('Learning Rates')
     ax.set_ylabel('Weight init')

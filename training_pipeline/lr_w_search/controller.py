@@ -23,18 +23,20 @@ Main function call for doing random hyperparameter search
 """
 def main():
 
-    num_trials = 1
+    num_trials = 100
+    num_epochs = 10
     final_accuracies = []
     learning_rates = []
     weight_scales = []
 
     for i in range(num_trials):
-
         # random search over logarithmic space of hyperparameters
-        lr = 10**np.random.uniform(-3.0,-6.0)
+        lr = 10**np.random.uniform(-3.0,-7.0)
         ws = 10**np.random.uniform(-2.0,-4.0)
         learning_rates.append(lr)
         weight_scales.append(ws)
+
+        print('---------------------{learning rate: %8f | weight scale: %6f | trial %i/%i}--------------------------' % (lr, ws, i+1, num_trials))
 
         """Read a sample from h5py dataset and return key dimensions
 
@@ -70,22 +72,25 @@ def main():
         callbacks_list = [loss_history, acc_history]
 
         # train the model
-        model.fit(dataX_test,
-                  dataY_test,
+        model.fit(dataX_train,
+                  dataY_train,
                   shuffle='batch',
-                  epochs=20,
+                  epochs=num_epochs,
                   batch_size=10000,  # 10000 is the maximum number of samples that fits on TITANX 12GB Memory
                   validation_data=(dataX_test, dataY_test),
                   verbose=1,
-                  callbacks = callbacks_list)
+                  callbacks=callbacks_list)
 
+        print ("--- Training Complete, plotting and saving training and accuracy history ---")
         # Graph training history
-        plotAndSaveData(loss_history, "Loss", learning_rate_hp=lr, weight_hp=ws, title="Loss History")
-        plotAndSaveData(acc_history, "Accuracy", learning_rate_hp=lr, weight_hp=ws, title="Acc History")
+        plotAndSaveData(loss_history.train_losses, loss_history.test_losses, "Loss", learning_rate_hp=lr, weight_hp=ws, title="Loss History")
+        plotAndSaveData(acc_history.train_acc, acc_history.test_acc, "Accuracy", learning_rate_hp=lr, weight_hp=ws, title="Acc History")
+        print ("...Plotting complete!")
 
         # Save final accuracy
         final_accuracies.append(acc_history.test_acc[-1])
 
+        print("--- Using model to predict spectrum for test set and saving result ---")
         # Make a directory to store the predicted spectrums
         folder_name = '{lr:%s}-{ws:%s}' % (str(lr), str(ws))
         dir_path = makeDir(folder_name)  # dir_path = "../graphs/predicted_spectrums/{lr:0.000597}-{ws:0.000759}"
@@ -95,6 +100,7 @@ def main():
                                window_length = 300,
                                USE_TITANX=USE_TITANX,
                                data_name=data_name)
+    print("...Predictions complete!")
 
     #Once all trials are complete, make a 3D plot that graphs x: learning rate, y: weight scale and z: final_accuracy
     plotAndSaveSession(learning_rates,weight_scales,final_accuracies)

@@ -15,14 +15,6 @@ class lossHistory:
         self.train_loss_history.append(uniform(0.0, 10.0))
         self.test_loss_history.append(uniform(0.0, 10.0))
 
-def test_plotAndSaveData(lossHistory):
-
-    for i in range(10):
-        lossHistory.generateLoss()
-
-    plotAndSaveData(lossHistory,"Loss",4e-7,0.0032,"Loss History")
-
-
 def test_makeDirs():
     lr = 10 ** np.random.uniform(-3.0, -6.0)
     ws = 10 ** np.random.uniform(-2.0, -4.0)
@@ -46,4 +38,10 @@ def test_plotAndSaveSession():
 
     plotAndSaveSession(learning_rates,weight_scales,final_accuracies)
 
-test_plotAndSaveSession()
+#test_plotAndSaveSession()
+
+loss_history = lossHistory()
+for i in range(10):
+    loss_history.generateLoss()
+
+plotAndSaveData(loss_history, "Loss", 4e-7, 0.0032, "Loss History")
