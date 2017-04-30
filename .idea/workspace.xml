@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f62cad7d-864b-45f8-87b8-39b18029de0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/training_pipeline/UnitTests/model_utils_UnitTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/training_pipeline/UnitTests/vars_attrs_UnitTest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py" afterPath="$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training_pipeline/lr_w_search/model_utils.py" afterPath="$PROJECT_DIR$/training_pipeline/lr_w_search/model_utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,36 +57,14 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="CNN_LSTM_STATEFUL.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_STATEFUL.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="525">
-                    <caret line="81" column="16" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="81" selection-end-column="16" />
-                    <folding>
-                      <element signature="e#1#10#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controller.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-824">
-              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="210">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding>
                 <element signature="e#200#296#0" expanded="true" />
               </folding>
@@ -108,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_utils_UnitTest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model_utils_UnitTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/training_pipeline/UnitTests/model_utils_UnitTest.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -181,9 +157,9 @@
         <option value="$PROJECT_DIR$/training_pipeline/exp_models/CNN_LSTM.py" />
         <option value="$PROJECT_DIR$/training_pipeline/exp_models/CNN_LSTM_models.py" />
         <option value="$PROJECT_DIR$/training_pipeline/UnitTests/vars_attrs_UnitTest.py" />
-        <option value="$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py" />
         <option value="$PROJECT_DIR$/training_pipeline/UnitTests/model_utils_UnitTest.py" />
         <option value="$PROJECT_DIR$/training_pipeline/lr_w_search/model_utils.py" />
+        <option value="$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py" />
       </list>
     </option>
   </component>
@@ -223,88 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training_pipeline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lr_w_search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training_pipeline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training_pipeline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="training_pipeline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auditory-hallucinations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model_tester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1027,16 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_STATEFUL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="81" column="16" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="81" selection-end-column="16" />
-          <folding>
-            <element signature="e#1#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model_tester/CNN_LSTM_scratch2_Tester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1055,13 +939,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py">
+    <entry file="file://$PROJECT_DIR$/training_pipeline/UnitTests/model_utils_UnitTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-824">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="45" />
-          <folding>
-            <element signature="e#200#296#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,11 +957,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training_pipeline/UnitTests/model_utils_UnitTest.py">
+    <entry file="file://$PROJECT_DIR$/models/CNN_LSTM_STATEFUL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1125">
+          <caret line="75" column="49" lean-forward="true" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_pipeline/lr_w_search/controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#200#296#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

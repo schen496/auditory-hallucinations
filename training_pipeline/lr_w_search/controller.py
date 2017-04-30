@@ -12,10 +12,15 @@ This is a controller for doing hyperparameter search over models used in the pro
 from training_pipeline.exp_models.CNN_LSTM_models import *  # Contains the models we are testing
 from training_pipeline.lr_w_search.model_utils import *  # Contains some useful functions for loading datasets
 
+#########################
+#Set TITANX and data_name
+
 USE_TITANX = True  # Set to True if using the Linux Machine with TitanX
 data_name = 'TopAngle100_dataX_dataY.h5'  # Set to name of h5py dataset
 
-"""Main function call"""
+"""
+Main function call for doing random hyperparameter search
+"""
 def main():
 
     num_trials = 1
@@ -98,40 +103,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-'''
-N_train = small_data['X_train'].shape[0]
-N_val = small_data['X_val'].shape[0]
-
-small_data_corr_dim = {
-    'X_train': small_data['X_train'].reshape(N_train, -1), # training data
-    'y_train': small_data['y_train'], # training labels
-    'X_val': small_data['X_val'].reshape(N_val, -1), # validation data
-    'y_val': small_data['y_val'], # validation labels
-  }
-
-#max_count = 100
-#for count in xrange(max_count):
-#lr = 10**np.random.uniform(-3.0,-4.0)
-#ws = 10**np.random.uniform(-2.0,-3.0)
-ws = 0.0031
-lr = 0.00045
-
-print "----------- { NEW PARAMETERS } ---------------"
-print "weight_scale: ", ws, "  learning_rate ", lr
-model = FullyConnectedNet([100, 100],
-                          weight_scale=ws,
-                          dtype=np.float64)
-solver = Solver(model,
-                small_data_corr_dim,
-                print_every=10, num_epochs=20, batch_size=25,
-                update_rule='sgd',
-                optim_config={
-                  'learning_rate': lr,
-                }
-         )
-solver.train()
-'''
